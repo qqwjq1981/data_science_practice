@@ -1,10 +1,12 @@
+# Supplementary Materials for ***Data Science Methods and Practice***
 
-# Supplementary Materials for Data Science in Practice
-
-This repo contains supplementary materials for the book [Data science methods and practices](https://www.amazon.com/Deep-Learning-Scratch-Building-Principles/dp/1492041416), published by CMP (China Machine Press) in 2024/2025. This repo is organized as follows:
-- Detailed answers or hints to the quizzes in the book.
+This repo contains supplementary materials for the book [Data Science Methods and Practice](https://), published by China Machine Press in 2024/2025. This repo is organized as follows:
+- Data Science Interview Questions & Practical Exercises.
 - Case study A: Personalized recommendation based on Linkedin profile.
 - Case study B: Data pipeline for a conceptual convenience store example.
+
+### Data Science Interview Questions & Practical Exercises
+
 
 ### Personalized recommendation based on Linkedin Profile
 The overall project aims to create a system that provides users with personalized content recommendations. It achieves this by collecting relevant articles from various websites based on predefined topics (**RSS Crawling**), using advanced techniques like embeddings and clustering to group similar articles together, (**Embedding and Clustering**) and analyzing a user's LinkedIn profile to understand their interests (**Profile Understanding and Recommendation**).
@@ -32,7 +34,7 @@ This module focuses on understanding a user's interests based on their LinkedIn 
 
 # 数据科学方法与实践配套资源
 
-本 repo 包含由机械工业出版社于 2024/2025 年出版的书籍 [数据科学方法与实践](https://www.amazon.com/Deep-Learning-Scratch-Building-Principles/dp/1492041416) 的配套资源。本 repo 组织如下：
+本 repo 包含由机械工业出版社于 2024/2025 年出版的书籍 [数据科学方法与实践](https://) 的配套资源。本 repo 组织如下：
 - 书中思考题的详细答案或提示。
 - 案例研究 A：基于 Linkedin 个人资料的个性化内容推荐。
 - 案例研究 B：便利店示例的数据管道。
