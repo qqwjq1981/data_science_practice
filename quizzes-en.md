@@ -75,7 +75,7 @@
 >* **Computation:** Big data processing frameworks (e.g., MapReduce, Spark) and parallel computing techniques.
 >* **System Implementation:** Data pipelines, monitoring tools, and containerization technologies.
 
-[\[↑\] Back to top](#Data-Science-Interview-Questions-&-Exercises)
+[\[↑\] Back to top](#Data-Science-Interview-Questions--Exercises)
 
 ## Chapter 2 Statistical Foundations
 
@@ -106,7 +106,7 @@
 >  - Multi-stage sampling. 
 >  - Systematic sampling.
 
-[\[↑\] Back to top](#Data-Science-Interview-Questions-&-Exercises)
+[\[↑\] Back to top](#Data-Science-Interview-Questions--Exercises)
 
 ## Chapter 3 Machine Learning
 
@@ -146,7 +146,7 @@
 
 > Common distance-based clustering algorithms include K-Means and hierarchical clustering. Density-based clustering algorithms include DBSCAN, HDBSCAN, etc.
 
-[\[↑\] Back to top](#Data-Science-Interview-Questions-&-Exercises)
+[\[↑\] Back to top](#Data-Science-Interview-Questions--Exercises)
 
 ## Chapter 4 Neural Networks and Deep Learning
 
@@ -175,7 +175,7 @@
 
 > Transformers have demonstrated exceptional sequence modeling abilities, achieving remarkable results in fields such as natural language processing, computer vision, and speech recognition. Future trends include enhancing multimodal capabilities, scaling models further, reducing computational and inference costs, and integrating with technologies like reinforcement learning and knowledge graphs.
 
-[\[↑\] Back to top](#Data-Science-Interview-Questions-&-Exercises)
+[\[↑\] Back to top](#Data-Science-Interview-Questions--Exercises)
 
 ## Chapter 5 Data Science Workflow
 
@@ -208,7 +208,7 @@
 > - **DBSCAN clustering:** Classifies points as core, border, or noise, with noise points identified as potential outliers.
 > - **LOF (Local Outlier Factor):** Measures outlyingness by comparing the local density of each point to that of its neighbors.
 
-[\[↑\] Back to top](#Data-Science-Interview-Questions-&-Exercises)
+[\[↑\] Back to top](#Data-Science-Interview-Questions--Exercises)
 
 ## Chapter 6 Data Storage and Computation
 
@@ -242,7 +242,7 @@
 
 > The core challenge is identifying continuous absence segments within the attendance data. This is a common **"Gaps and Islands"** problem in SQL. The solution involves sorting absence dates for each student and using a difference operation to group consecutive absences.
 
-[\[↑\] Back to top](#Data-Science-Interview-Questions-&-Exercises)
+[\[↑\] Back to top](#Data-Science-Interview-Questions--Exercises)
 # Chapter 7 Data Science Technology Stack
 
 #### How can an XGBoost model, trained in Python, be deployed to a production environment?
@@ -296,7 +296,7 @@
 > * Kubernetes: Container orchestration platform
 > * Cloud Service Platforms: AWS SageMaker, Google Cloud AI Platform, etc.
 
-[\[↑\] Back to top](#Data-Science-Interview-Questions-&-Exercises)
+[\[↑\] Back to top](#Data-Science-Interview-Questions--Exercises)
 
 # Chapter 8 Product Analytics
 
@@ -348,7 +348,7 @@
 >
 >By conducting these analyses, we can gain valuable insights into the factors contributing to the GMV growth and identify potential areas for further optimization.
 
-[\[↑\] Back to top](#Data-Science-Interview-Questions-&-Exercises)
+[\[↑\] Back to top](#Data-Science-Interview-Questions--Exercises)
 
 ## Chapter 9 Metrics
 
@@ -390,7 +390,7 @@
 >
 >* Consider the broader impact of content moderation on the platform's tone, revenue, and creator ecosystem. Develop strategies to incentivize high-quality content creation while minimizing negative impacts on the community.
 
-[\[↑\] Back to top](#Data-Science-Interview-Questions-&-Exercises)
+[\[↑\] Back to top](#Data-Science-Interview-Questions--Exercises)
 
 ## Chapter 10 A/B Testing
 
@@ -442,7 +442,7 @@
 
 #### To what extent has your company integrated experimentation into its decision-making process (crawling, walking, running, or flying)?
 
-[\[↑\] Back to top](#Data-Science-Interview-Questions-&-Exercises)
+[\[↑\] Back to top](#Data-Science-Interview-Questions--Exercises)
 
 ## Chapter 11 Models in Search, Recommendation and Advertising
 
@@ -496,7 +496,7 @@ Where TF has multiple variants, which can use raw frequency, relative frequency,
 > | Historical Information | Uses less | Uses fully | 
 > | Use Cases | General | Sparse Data |
 
-[\[↑\] Back to top](#Data-Science-Interview-Questions-&-Exercises)
+[\[↑\] Back to top](#Data-Science-Interview-Questions--Exercises)
 
 ## Chapter 12: Recommender Systems
 
@@ -546,7 +546,7 @@ Where TF has multiple variants, which can use raw frequency, relative frequency,
 > - **API Integration:** Develop APIs to expose user profile data to other systems.
 > - **Application Scenarios:** Identify use cases for personalized recommendations, targeted marketing, and user segmentation.
 
-[\[↑\] Back to top](#Data-Science-Interview-Questions-&-Exercises)
+[\[↑\] Back to top](#Data-Science-Interview-Questions--Exercises)
 
 # Chapter 13 Computational Advertising
 
@@ -596,7 +596,7 @@ Where TF has multiple variants, which can use raw frequency, relative frequency,
 > 2. **Independent Pacing:** Implement independent pacing mechanisms to control spending for each experiment.
 > 3. **Statistical Analysis:** Use statistical techniques to analyze the results, accounting for budget constraints.
 
-[\[↑\] Back to top](#Data-Science-Interview-Questions-&-Exercises)
+[\[↑\] Back to top](#Data-Science-Interview-Questions--Exercises)
 
 ## Chapter 14 Search
 
@@ -637,7 +637,7 @@ Where TF has multiple variants, which can use raw frequency, relative frequency,
 > | Applicability | End-to-end and module-level | Primarily end-to-end | 
 > | Cost | High (human labor) | High (development and testing) |
 
-[\[↑\] Back to top](#Data-Science-Interview-Questions-&-Exercises)
+[\[↑\] Back to top](#Data-Science-Interview-Questions--Exercises)
 
 ## Chapter 15 Natural Language Processing
 
@@ -668,7 +668,7 @@ Where TF has multiple variants, which can use raw frequency, relative frequency,
 
 > For a deeper dive into the history and applications of NLP, please refer to Chapters 15.1 and 15.2.
 
-[\[↑\] Back to top](#Data-Science-Interview-Questions-&-Exercises)
+[\[↑\] Back to top](#Data-Science-Interview-Questions--Exercises)
 
 ## Chapter 16 Large Language Models
 
