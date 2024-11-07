@@ -1,64 +1,64 @@
 # Data Science Interview Questions & Exercises
 
-[Chapter 1 Introduction to Data Science](#第1章-数据科学简介)
+[Chapter 1 Introduction to Data Science](#Chapter-1-Introduction-to-Data-Science)
 
-[Chapter 2 Statistical Foundations](#第2章-统计基础)
+[Chapter 2 Statistical Foundations](#Chapter-2-Statistical-Foundations)
 
-[Chapter 3 Machine Learning](#第3章-机器学习)
+[Chapter 3 Machine Learning Essentials](#Chapter-3-Machine-Learning-Essentials)
 
-[Chapter 4 Neural Networks and Deep Learning](#第4章-神经网络与深度学习)
+[Chapter 4 Neural Networks and Deep Learning](#Chapter-4-Neural-Networks-and-Deep-Learning)
 
-[Chapter 5 Data Science Workflow](#第5章-数据科学的流程)
+[Chapter 5 Data Science Workflow](#Chapter-5-Data-Science-Workflow)
 
-[Chapter 6 Data Storage and Computation](#第6章-数据存储和处理)
+[Chapter 6 Data Storage and Computation](#Chapter-6-Data-Storage-and-Computation)
 
-[Chapter 7 Data Science Technology Stack](#第7章-机器学习技术栈)
+[Chapter 7 Data Science Technology Stack](#Chapter-7-Data-Science-Technology-Stack)
 
-[Chapter 8 Product Analytics](#第8章-产品分析)
+[Chapter 8 Product Analytics](#Chapter-8-Product-Analytics)
 
-[Chapter 9 Metrics](#第9章-度量指标)
+[Chapter 9 Metrics](#Chapter-9-Metrics)
 
-[Chapter 10 A/B Testing](#第10章-AB实验)
+[Chapter 10 A/B Testing](#Chapter-10-A--B-Testing)
 
-[Chapter 11 Models in Search, Recommendation and Advertising](#第11章-搜索推荐广告模型)
+[Chapter 11 Models in Search, Recommendation and Advertising](#Chapter-11-Models-in-Search--Recommendation-and-Advertising)
 
-[Chapter 12 Recommender Systems](#第12章-推荐领域的应用场景)
+[Chapter 12 Recommender Systems](#Chapter-12-Recommender-Systems)
 
-[Chapter 13 Computational Advertising](#第13章-广告领域的应用场景)
+[Chapter 13 Computational Advertising](#Chapter-13-Computational-Advertising)
 
-[Chapter 14 Search](#第14章-神经网络与深度学习)
+[Chapter 14 Search](#Chapter-14-Search)
 
-[Chapter 15 Natural Language Models](#第15章-自然语言模型与应用场景)
+[Chapter 15 Natural Language Models](#Chapter-15-Natural-Language-Models)
 
-[Chapter 16 Introduction to Large Language Models](#第16章-大语言模型)
+[Chapter 16 Introduction to Large Language Models](#Chapter-16-Introduction-to-Large-Language-Models)
 
 ## Chapter 1 Introduction to Data Science
 
-#### What is the difference between the data scientist and machine learning engineer role?
-> A data scientist primarily focuses on translating business challenges into data-driven problems, propose and prototype solutions. A machine learning engineer takes these insights and turns them into concrete algorithms and models, deploy and maintain the models in production environment.
+#### What is the difference between the Data Scientist and Machine Learning Engineer role?
+> A Data Scientist primarily focuses on translating business challenges into data-driven problems, propose and prototype solutions. A Machine Learning Engineer takes these insights and turns them into concrete algorithms and models, deploy and maintain the models in a production environment.
 > 
-> | Area      | Data Scientist                   | Machine Learning Engineer         
+> | Attributes  | Data Scientist                   | Machine Learning Engineer         
 > |--------------|----------------------------------|----------------------------|
 > | Focus        | Frame business problems as data science problems, gain insights from data | Develop, optimize, deploy and maintain models in production |
-> | Skillset       | Statistics, machine learning, data visualization, communication | Machine learning, algorithm design and optimization, ML Ops |
+> | Skillset       | Statistics, machine learning, data visualization, communication | Machine learning, algorithm design and optimization, MLOps |
 > | Responsibility     | From business problem to data-driven solution | From algorithm design to system implementation |
 
 #### Please name a few data science applications in areas such as healthcare, finance, e-commerce, and marketing.
 > Healthcare: 
-> * Disease diagnosis: Analyze patients' medical data (such as medical history, imaging, genetic data) to diagnose disease in early stage. 
-> * AI-driven Drug Development: Discover potential drug targets using AI to accelerate the drug development process and reduce development cost.
+> * Disease diagnosis: Analyze patients' medical data (such as medical history, medical imaging, genetic information) to diagnose disease in early stage. 
+> * AI-driven drug development: Discover potential drug targets to accelerate the drug development process and reduce development cost.
 >     
 >Finance: 
-> * Fraud Detection: Identify fraudulent transactions and prevent financial fraud.
-> * Risk Assessment: Evaluate credit risk using customer credit history, transaction records, and other data to provide decision support for loan approvals.
-> * Portfolio Optimization: Construct optimal investment portfolio based on market data and client risk preferences. 
-> * Quantitative Trading: Analyze market data to automatically carry out trading strategies.
+> * Fraud detection: Identify fraudulent transactions and prevent financial fraud.
+> * Risk assessment: Evaluate credit risk using customer credit history, transaction records, and other data to provide decision support for loan approvals.
+> * Portfolio optimization: Construct optimal investment portfolio based on market data and client risk preferences. 
+> * Quantitative trading: Analyze market data to automatically carry out trading strategies.
 >
 >E-commerce: 
-> * Recommendation System: Recommend products of interest to users based on their historical purchase records, browsing behavior, and demographic data. 
-> * Demand Forecasting: Predict future product demand to optimize inventory. 
-> * Customer Segmentation: Segment customers based on different characteristics to achieve precise marketing.
-> * Price Optimization: Dynamically adjust product prices based on market competition and product attributes.
+> * Recommendation system: Recommend products of interest to users based on their historical purchase records, browsing behavior, and demographic data. 
+> * Demand forecasting: Predict future product demand to optimize inventory. 
+> * Customer segmentation: Segment customers based on different characteristics to achieve precise marketing.
+> * Price optimization: Dynamically adjust product prices based on market competition and product attributes.
 > 
 > Marketing: 
 > * Customer Relationship Management: Understand customer needs, and improve customer satisfaction and loyalty. 
@@ -87,9 +87,9 @@
 
 >  If the contestant initially selects a door randomly, the probability of choosing the car is $1/3$. Therefore, if they stick with their initial choice, the probability of winning remains $1/3$. However, if the contestant initially selects a goat (which has a $2/3$ probability), the host will be forced to reveal the other goat. In this case, switching to the remaining unopened door guarantees a win. Thus, the optimal strategy is to **always switch doors**.。
 
-#### Given an unfair coin with a probability of landing heads up, $p$, how can we simulate a fair coin flip?？
+#### Given an unfair coin with a probability of landing heads up, $p$, how can we simulate a fair coin flip?
 
-> A common approach is to flip the coin twice. If the two flips result in the same outcome (both heads or both tails), discard the result and flip again. If the two flips result in different outcomes (one head and one tail), we can use the first flip as the outcome of the fair coin flip. The probability of getting a head or a tail in this scenario is 1/2.
+> A common approach is to flip the coin twice. If the two flips result in the same outcome (both heads or both tails), discard the result and flip again. If the two flips result in different outcomes (one head and one tail), we can use the first flip as the outcome of the fair coin flip. The probability of getting a (Head, Tail) or a (Tail, Head) in this scenario is 1/2.
 
 #### Please use a real-world example to explain false positives and false negatives. 
 
@@ -97,7 +97,7 @@
 >* **False Positive**: A healthy individual tests positive for the disease, leading to unnecessary concern and potential further testing.
 >* **False Negative**: A person with the disease tests negative, delaying diagnosis and potentially hindering timely treatment.
 
-#### What are some common sampling techniques used to select a subset from a finite population? Please provide 3-5 examples.
+#### What are some common sampling techniques used to select a subset from a finite population? Please provide up to 5 examples.
 
 > Commonly used sampling techniques include: 
 >  - Sampling with replacement.
@@ -108,22 +108,22 @@
 
 [\[↑\] Back to top](#Data-Science-Interview-Questions--Exercises)
 
-## Chapter 3 Machine Learning
+## Chapter 3 Machine Learning Essentials
 
-#### Compare and contrast the strengths and weaknesses of Linear Regression (LR), Random Forest (RF), and Gradient Boosting Decision Trees (GBDT) algorithms. Additionally, discuss the strategies for implementing these algorithms in a distributed computing environment..
+#### Compare and contrast the strengths and weaknesses of Linear Regression (LR), Random Forest (RF), and Gradient Boosting Decision Trees (GBDT) algorithms. Additionally, discuss the strategies for implementing these algorithms in a distributed computing environment.
 
-> A detailed comparison of the advantages and disadvantages of these algorithms can be found in Table 3-3 of this book. 
+> A detailed comparison of the advantages and disadvantages of these algorithms can be found in Table 3-3 of this book. Implementing these algorithms in distributed computing environment:
 > - Random Forest can be easily parallelized by constructing individual decision trees concurrently. 
 > - While Gradient Boosting Decision Trees are inherently sequential, feature computation and tree construction for each iteration can be parallelized in a distributed setting. 
-> - Linear Regression can be parallelized using parameter servers and asynchronous update mechanisms.
+> - Linear Regression can be parallelized using parameter server and asynchronous update mechanisms.
 
 #### For a binary classification problem, consider randomly selecting one positive and one negative sample. The Area Under the Curve (AUC) metric can be interpreted as the probability that the model assigns a higher score to the positive sample than to the negative sample. Please provide a formal derivation of this relationship.
 
-~~Let $F_S​(s)$ and $F_T​(t)$ denote the cumulative distribution functions of the predicted scores for the positive and negative classes, respectively. The probability that a randomly drawn positive sample, $S$, has a higher score than a randomly drawn negative sample, $T$, is given by $P(S>T)$. By applying probability integral transformation and recognizing the geometric interpretation of AUC is the area under the ROC curve, we can formally derive this relationship.~~
+Let $F_S​(s)$ and $F_T​(t)$ denote the cumulative distribution functions of the predicted scores for the positive and negative classes, respectively. The probability that a randomly drawn positive sample, $S$, has a higher score than a randomly drawn negative sample, $T$, is given by $P(S>T)$. By applying probability integral transformation and recognizing the geometric interpretation of AUC is the area under the ROC curve, we can formally derive this relationship with some integral tricks.
 
 #### What is the difference between XGBoost and GBDT algorithms?
 
-> | Feature | GBDT | XGBoost |
+> | Attributes | GBDT | XGBoost |
 > |---|---|---| 
 > | Loss Function | Primarily uses squared error loss or exponential loss | Supports custom loss functions and incorporates second-order derivatives | 
 > | Regularization | No explicit regularization terms | Introduces L1 and L2 regularization terms to prevent overfitting | 
@@ -137,12 +137,12 @@
 > - **Overfitting**: 
 >     - Ensemble learning (Bagging, Boosting).
 >     - L1 and L2 regularization.
->     - Regularization techniques in neural networks (Dropout and Early Stopping). 
+>     - Regularization techniques in neural networks (dropout and early stopping). 
 >  - **Underfitting**: 
 >      - Feature crossing. 
 >      - More complex models and search for new features.
 
-#### List common distance-based clustering and density-based clustering algorithm.  Please provide 3-5 examples.
+#### List common distance-based clustering and density-based clustering algorithms.  Please provide up to 5 examples.
 
 > Common distance-based clustering algorithms include K-Means and hierarchical clustering. Density-based clustering algorithms include DBSCAN, HDBSCAN, etc.
 
@@ -159,9 +159,11 @@
 
 #### What are the common regularization methods in deep learning, and how do layer normalization and batch normalization differ?
 
-> Common regularization methods in deep learning include dropout and early stopping. 
+> Common regularization methods in deep learning include dropout and early stopping. Comparison between layer norm and batch norm:
 > - **Layer normalization** normalizes across the feature dimensions within a single sample, making it independent of batch size.
-> - **Batch normalization** normalizes across feature dimensions within a batch, which can accelerate training when input size is fixed. For variable input sequences or when batch-size independence is required, layer normalization is preferred. Batch normalization is generally effective when input size is fixed and speed in training is a priority.
+> - **Batch normalization** normalizes across feature dimensions within a batch, which can accelerate training when input size is fixed. 
+>
+> For variable input sequences or when batch-size independence is required, layer normalization is preferred. Batch normalization is generally effective when input size is fixed and speed in training is a priority.
 
 #### What are the application scenarios for one-to-one, one-to-many, and many-to-many configurations in the input and output layers of a Recurrent Neural Network?
 
@@ -173,7 +175,7 @@
 
 #### In which tasks have transformers excelled? What are the future trends?
 
-> Transformers have demonstrated exceptional sequence modeling abilities, achieving remarkable results in fields such as natural language processing, computer vision, and speech recognition. Future trends include enhancing multimodal capabilities, scaling models further, reducing computational and inference costs, and integrating with technologies like reinforcement learning and knowledge graphs.
+> Transformers have demonstrated exceptional sequential modeling abilities, achieving remarkable results in fields such as natural language processing, computer vision, and speech recognition. Future trends include enhancing multimodal capabilities, scaling models further, reducing computational and inference costs, and integrating with technologies like reinforcement learning and knowledge graphs.
 
 [\[↑\] Back to top](#Data-Science-Interview-Questions--Exercises)
 
@@ -189,7 +191,7 @@
 
 #### What data collection methods have you encountered or used in past work?
 
-> Methods include transaction data from terminal devices, web data scraped from the internet, user behavior logs, and sensor data from vehicles.
+> Methods include recording transaction data from terminal devices, scraping web data from the internet, log user behaviors, and track sensor data from vehicles.
 
 #### How are missing values commonly handled?
 
@@ -214,17 +216,49 @@
 
 #### Design a database system for a convenience store that tracks transaction time, user, itemized products (quantity and price), and allows for product returns.
 
->* Requirements:
-> --   Track transaction time, user ID, and multiple products per order.
-> --   Record product name, quantity, and unit price for each item.
->--   Accommodate product returns.
-
-> **Table Design:**
-
-~~1. **Order Table (orders)**: Includes order\_id (primary key): Order ID, customer\_id: Customer ID, order\_time: Order creation time, total\_amount: Total order amount, status: Order status (Pending Payment, Paid, Completed, Canceled);
-2. **Order details table（order\_items）**: Includes item\_id (primary key): Order detail ID, order\_id (foreign key): Associated order table, product\_id: Product ID, quantity: Product quantity, unit\_price: Unit price;
-3. **Product Table (products)**: Includes product\_id (primary key): Product ID, product\_name: Product name, category: Product category, price: Product price;
-4. **Returns Record Table (returns)**: Includes return\_id (primary key): Return Record ID, order\_item\_id (foreign key): Associated Order Detail Table, return\_quantity: Return Quantity, return\_time: Return Time~~
+> Requirements:
+> -   Track transaction time, user ID, and multiple products per order.
+> -   Record product name, quantity, and unit price for each item.
+>-   Accommodate product returns.
+>
+> Table Design:
+> -  Order Table (`orders`)
+> 
+> | Column Name    | Type        | Description                                                          |
+> |----------------|-------------|----------------------------------------------------------------------|
+> | `order_id`     | Primary Key | Order ID                                                             |
+> | `customer_id`  | Foreign Key | Customer ID                                                          |
+> | `order_time`   | Timestamp   | Order creation time                                                  |
+>| `total_amount` | Decimal     | Total order amount                                                   |
+> | `status`       | Enum        | Order status (e.g., Pending Payment, Paid, Completed, Canceled)      |
+>
+> - Order Details Table (`order_items`)
+>
+>| Column Name   | Type        | Description                                      |
+>|---------------|-------------|--------------------------------------------------|
+>| `item_id`     | Primary Key | Order detail ID                                  |
+>| `order_id`    | Foreign Key | Associated order ID                              |
+>| `product_id`  | Foreign Key | Product ID                                       |
+>| `quantity`    | Integer     | Product quantity                                 |
+>| `unit_price`  | Decimal     | Unit price of the product                        |
+>
+> - Product Table (`products`)
+>
+> | Column Name    | Type        | Description               |
+> |----------------|-------------|---------------------------|
+> | `product_id`   | Primary Key | Product ID               |
+> | `product_name` | Text        | Product name             |
+> | `category`     | Text        | Product category         |
+> | `price`        | Decimal     | Product price            |
+>
+> - Returns Record Table (`returns`)
+>
+> | Column Name       | Type        | Description                  |
+> |-------------------|-------------|------------------------------|
+> | `return_id`       | Primary Key | Return record ID             |
+> | `order_item_id`   | Foreign Key | Associated order detail ID   |
+> | `return_quantity` | Integer     | Return quantity              |
+> | `return_time`     | Timestamp   | Return time                  |
 
 #### How can we calculate the median price from a stream of transaction prices?
 
@@ -246,6 +280,7 @@
 # Chapter 7 Data Science Technology Stack
 
 #### How can an XGBoost model, trained in Python, be deployed to a production environment?
+
 > -   **Model Serialization:** Save the trained model using XGBoost's built-in methods, Pickle, or Joblib.
 > -   **Model Loading:** Load the serialized model in the production environment using the appropriate library.
 > -   **Deployment Platform:** Choose a suitable deployment platform (local or cloud-based).
@@ -290,8 +325,8 @@
 > 
 > Technology Stack:
 > * PyTorch: Deep learning framework
-> * NLTK/spaCy：自然语言处理工具
-> * Flask/FastAPI：Web框架
+> * NLTK/spaCy：NLP
+> * Flask/FastAPI：Web framework
 > * Docker: Containerization technology
 > * Kubernetes: Container orchestration platform
 > * Cloud Service Platforms: AWS SageMaker, Google Cloud AI Platform, etc.
@@ -408,7 +443,7 @@
 > -   **Verify Randomization Effectiveness:** Ensure that users are evenly distributed across buckets.
 > -   **Employ Statistical Techniques:** Use methods like propensity score matching (PSM) to control for confounding variables.
 
-#### AB test can be conducted at user level or device level. For new user registration, shall we use device-level or user-level?
+#### A/B test can be conducted at user level or device level. For new user registration, shall we use device-level or user-level?
 
 > **For new user registration, device-level A/B testing is generally preferred.**
 >This approach offers several advantages:
@@ -452,9 +487,7 @@
 
 #### What is the TF-IDF formula, and how does it work?
 
-~~The TF-IDF formula is:
-$$ TF-IDF (t, d) = TF(t, d) * IDF(t)$$
-Where TF has multiple variants, which can use raw frequency, relative frequency, or logarithmic frequency. IDF (Inverse Document Frequency) is typically calculated using the following formula:~~
+> Refer to Chapter 11.2.1 for a detailed definition.
 
 #### How does the PageRank algorithm work?
 
@@ -504,16 +537,16 @@ Where TF has multiple variants, which can use raw frequency, relative frequency,
 
 > To evaluate a recommendation retrieval model, we can consider both individual and comparative metrics:
 >
-> **Individual Evaluation**
+> **Evaluation of a single retrieval path**:
 >    -   Top-K Accuracy
 >     -   Retrieval Rate
 >     -   F1-Score
 >     -   Hit Rate
 >
-> **Comparative Evaluation**
+> **Evaluation in the presence of other retrieval paths**:
 > >
 > - **Retrieval Overlap:** Measures the extent to which a new retrieval source complements existing ones.
->  - **Precision Ranking Consistency:** Assesses how well the retrieval source aligns with the precision ranking model.
+>  - **Ranking Consistency:** Assesses how well the retrieval items aligns with the ranking model.
 
 #### How do the retrieval, ranking, and re-ranking modules of a recommendation system work?
 
