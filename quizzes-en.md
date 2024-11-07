@@ -1,4 +1,4 @@
-# Data Science Interview Questions &  Exercises
+# Data Science Interview Questions & Exercises
 
 [Chapter 1 Introduction to Data Science](#第1章-数据科学简介)
 

@@ -4,6 +4,9 @@ This repo contains supplementary materials for the book *Data Science Methods an
 
 ![Data Science Methods and Practice](https://github.com/qqwjq1981/data_science_practice/blob/main/dataScience.jpg)
 
+<img src="https://github.com/qqwjq1981/data_science_practice/blob/main/dataScience.jpg" alt="Alt text" width="300" height="200">
+
+
 This repo is organized as follows:
 - Data Science Interview Questions & Practical Exercises.
 - Case study A: Personalized recommendation based on Linkedin profile.
