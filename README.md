@@ -2,7 +2,7 @@
 
 This repo contains supplementary materials for the book *Data Science Methods and Practice*, published by China Machine Press in 2024/2025. 
 
-<img src="https://github.com/qqwjq1981/data_science_practice/blob/main/dataScience.jpg" alt="Alt text" width="500" height="750">
+<img src="https://github.com/qqwjq1981/data_science_practice/blob/main/dataScience.jpg" alt="Alt text" width="400" height="600">
 
 
 This repo is organized as follows:
