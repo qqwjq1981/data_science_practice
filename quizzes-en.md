@@ -1,6 +1,4 @@
-
-
-# Data Science Interview Questions & Practical Exercises
+# Data Science Interview Questions &  Exercises
 
 [Chapter 1 Introduction to Data Science](#第1章-数据科学简介)
 
@@ -12,7 +10,7 @@
 
 [Chapter 5 Data Science Workflow](#第5章-数据科学的流程)
 
-[Chapter 6 Data Storage and Processing](#第6章-数据存储和处理)
+[Chapter 6 Data Storage and Computation](#第6章-数据存储和处理)
 
 [Chapter 7 Data Science Technology Stack](#第7章-机器学习技术栈)
 
@@ -22,7 +20,7 @@
 
 [Chapter 10 A/B Testing](#第10章-AB实验)
 
-[Chapter 11 Models in Search, Recommendation and Advertising ](#第11章-搜索推荐广告模型)
+[Chapter 11 Models in Search, Recommendation and Advertising](#第11章-搜索推荐广告模型)
 
 [Chapter 12 Recommender Systems](#第12章-推荐领域的应用场景)
 
@@ -36,34 +34,36 @@
 
 ## Chapter 1 Introduction to Data Science
 
-#### What is the difference between the data scientist and machine learning engineer roles?
-
+#### What is the difference between the data scientist and machine learning engineer role?
 > A data scientist primarily focuses on translating business challenges into data-driven problems, propose and prototype solutions. A machine learning engineer takes these insights and turns them into concrete algorithms and models, deploy and maintain the models in production environment.
+> 
 > | Area      | Data Scientist                   | Machine Learning Engineer         
 > |--------------|----------------------------------|----------------------------|
-> | Focus        | Frame business problems as modeling problems, extract insights from data | Develop, optimize, deploy and maintain models in production |
+> | Focus        | Frame business problems as data science problems, gain insights from data | Develop, optimize, deploy and maintain models in production |
 > | Skillset       | Statistics, machine learning, data visualization, communication | Machine learning, algorithm design and optimization, ML Ops |
 > | Responsibility     | From business problem to data-driven solution | From algorithm design to system implementation |
 
 #### Please name a few data science applications in areas such as healthcare, finance, e-commerce, and marketing.
-
-> * **Healthcare**: 
-	* **Disease diagnosis:** Analyze patients' medical data (such as medical history, imaging, genetic data) to diagnose disease in early stage. 
-	* **AI-driven Drug Development:** Discover potential drug targets using AI to accelerate the drug development process and reduce development cost.
->* **Finance**: 
-	* **Fraud Detection:** Identify fraudulent transactions and prevent financial fraud.
-	* **Risk Assessment:** Evaluate credit risk using customer credit history, transaction records, and other data to provide decision support for loan approvals.
-	* **Portfolio Optimization:** Construct optimal investment portfolio based on market data and client risk preferences. 
-	* **Quantitative Trading:** Analyze market data to automatically carry out trading strategies.
->* **E-commerce**: 
-	* **Recommendation System:** Recommend products of interest to users based on their historical purchase records, browsing behavior, and demographic data. 
-	* **Demand Forecasting:** Predict future product demand to optimize inventory. 
-	* **Customer Segmentation:** Segment customers based on different characteristics to achieve precise marketing.
-	* **Price Optimization:** Dynamically adjust product prices based on market competition and product attributes.
-> * **Marketing**: 
-	* **Customer Relationship Management:** Understand customer needs, and improve customer satisfaction and loyalty. 
-	* **Advertising:** Optimize advertising strategies to improve conversion or ROI.
-	* **Measurement:** Measure the ROI of marketing activities to provide a basis for subsequent marketing decisions.
+> Healthcare: 
+> * Disease diagnosis: Analyze patients' medical data (such as medical history, imaging, genetic data) to diagnose disease in early stage. 
+> * AI-driven Drug Development: Discover potential drug targets using AI to accelerate the drug development process and reduce development cost.
+>     
+>Finance: 
+> * Fraud Detection: Identify fraudulent transactions and prevent financial fraud.
+> * Risk Assessment: Evaluate credit risk using customer credit history, transaction records, and other data to provide decision support for loan approvals.
+> * Portfolio Optimization: Construct optimal investment portfolio based on market data and client risk preferences. 
+> * Quantitative Trading: Analyze market data to automatically carry out trading strategies.
+>
+>E-commerce: 
+> * Recommendation System: Recommend products of interest to users based on their historical purchase records, browsing behavior, and demographic data. 
+> * Demand Forecasting: Predict future product demand to optimize inventory. 
+> * Customer Segmentation: Segment customers based on different characteristics to achieve precise marketing.
+> * Price Optimization: Dynamically adjust product prices based on market competition and product attributes.
+> 
+> Marketing: 
+> * Customer Relationship Management: Understand customer needs, and improve customer satisfaction and loyalty. 
+> * Advertising: Optimize advertising strategies to improve conversion or ROI.
+> * Measurement: Measure the ROI of marketing activities to provide a basis for subsequent marketing decisions.
 
 #### Provide 2-3 examples of outstanding data scientists around you, highlighting their exceptional qualities.
 
@@ -75,514 +75,643 @@
 >* **Computation:** Big data processing frameworks (e.g., MapReduce, Spark) and parallel computing techniques.
 >* **System Implementation:** Data pipelines, monitoring tools, and containerization technologies.
 
-[\[↑\] Back to top](#数据科学方法与实践思考题)
+[\[↑\] Back to top](#DataScienceInterviewQuestions&Exercises)
 
 ## Chapter 2 Statistical Foundations
 
-#### Toss a fair coin until there is a head. Please calculate the distribution of the total number of tosses (including the last toss).
+#### Simulate repeated coin flips until the first head appears. Determine the probability distribution of the total number of flips required.
 
 > The distribution of the total number of tosses follows a geometric distribution, with probability mass function $P(X=k) = (1/2)^k$.
 
-#### Monty Hall problem: The game consists of three doors, behind one of which is a car, while the other two have goats. The contestant randomly selects one door. After the contestant selects a door, the host will open another door, revealing a goat inside. Should the contestant switch doors at this point? What are the probabilities of winning if they switch versus if they do not switch?
+#### Monty Hall problem: The Monty Hall problem is a classic probability puzzle. Suppose there are three doors, behind one of which is a car, and behind the other two are goats. A contestant randomly selects a door. After the contestant’s choice, the host, who knows what’s behind each door, opens another door, revealing a goat. Should the contestant stick with their original choice, or switch to the remaining unopened door?
 
-> In Monty Hall problem, the probability of winning by randomly selecting a door is $1/3$. Therefore, the probability of winning by not switching doors is also $1/3$. 而在初始选择不中的情况下，换门都都会中奖，故换门中奖的概率是$2/3$。
+>  If the contestant initially selects a door randomly, the probability of choosing the car is $1/3$. Therefore, if they stick with their initial choice, the probability of winning remains $1/3$. However, if the contestant initially selects a goat (which has a $2/3$ probability), the host will be forced to reveal the other goat. In this case, switching to the remaining unopened door guarantees a win. Thus, the optimal strategy is to **always switch doors**.。
 
 #### Given an unfair coin with a probability of landing heads up, $p$, how can we simulate a fair coin flip?？
 
 > A common approach is to flip the coin twice. If the two flips result in the same outcome (both heads or both tails), discard the result and flip again. If the two flips result in different outcomes (one head and one tail), we can use the first flip as the outcome of the fair coin flip. The probability of getting a head or a tail in this scenario is 1/2.
 
-#### Please use a real-life example to explain false positives and false negatives. 
+#### Please use a real-world example to explain false positives and false negatives. 
 
 > For instance, consider a new diagnostic test for a disease.
 >* **False Positive**: A healthy individual tests positive for the disease, leading to unnecessary concern and potential further testing.
 >* **False Negative**: A person with the disease tests negative, delaying diagnosis and potentially hindering timely treatment.
 
-#### > What are some common sampling techniques used to select a subset from a finite population? Please provide 3-5 examples.
+#### What are some common sampling techniques used to select a subset from a finite population? Please provide 3-5 examples.
 
-> Commonly used sampling methods include: 
+> Commonly used sampling techniques include: 
 >  - Sampling with replacement.
 >  - Sampling without replacement.
 >  - Stratified sampling.
 >  - Multi-stage sampling. 
 >  - Systematic sampling.
 
-[\[↑\] Back to top](#数据科学方法与实践思考题)
+[\[↑\] Back to top](#DataScienceInterviewQuestions&Exercises)
 
 ## Chapter 3 Machine Learning
 
-#### Analyze the advantages and disadvantages of algorithms such as LR, RF, and GBDT, and consider how to implement LR, RF, and GBDT algorithms in a distributed environment.
+#### Compare and contrast the strengths and weaknesses of Linear Regression (LR), Random Forest (RF), and Gradient Boosting Decision Trees (GBDT) algorithms. Additionally, discuss the strategies for implementing these algorithms in a distributed computing environment..
 
-For the advantages and disadvantages of algorithms, see Table 3-3 of this book. The decision trees in RF can be constructed in parallel, making parallelization easy to achieve. GBDT is a serial algorithm, but in a distributed environment, the feature computation and tree construction for each round can be parallelized. LR can achieve parallelization through parameter servers and asynchronous updates.
+> A detailed comparison of the advantages and disadvantages of these algorithms can be found in Table 3-3 of this book. 
+> - Random Forest can be easily parallelized by constructing individual decision trees concurrently. 
+> - While Gradient Boosting Decision Trees are inherently sequential, feature computation and tree construction for each iteration can be parallelized in a distributed setting. 
+> - Linear Regression can be parallelized using parameter servers and asynchronous update mechanisms.
 
-#### For a binary classification problem, randomly select one positive sample and one negative sample. AUC can be expressed as the probability that the predicted value of the positive sample is greater than that of the negative sample; please provide the derivation process.
+#### For a binary classification problem, consider randomly selecting one positive and one negative sample. The Area Under the Curve (AUC) metric can be interpreted as the probability that the model assigns a higher score to the positive sample than to the negative sample. Please provide a formal derivation of this relationship.
 
-Assume that the predicted scores of the positive samples follow the distribution $F_TS(s)$, and the predicted scores of the negative samples follow the distribution $F_T​(t)$. Random variables $S$ and $T$ follow distributions $FS(s)$ and $FT(t)$, respectively. The probability that the predicted value of the positive sample is greater than that of the negative sample is $P(S>T)$. When transforming the probability $P(S>T)$ into the area under the ROC curve, considering that the area under the ROC curve can be represented as the integral of a binary uniform distribution over $[0, 1]$, the proof can be completed using the probability integral transformation.
+~~Let $F_S​(s)$ and $F_T​(t)$ denote the cumulative distribution functions of the predicted scores for the positive and negative classes, respectively. The probability that a randomly drawn positive sample, $S$, has a higher score than a randomly drawn negative sample, $T$, is given by $P(S>T)$. By applying probability integral transformation and recognizing the geometric interpretation of AUC is the area under the ROC curve, we can formally derive this relationship.~~
 
 #### What is the difference between XGBoost and GBDT algorithms?
 
-| Feature | GBDT | XGBoost |
-|---|---|---| 
-| Loss Function | Primarily uses square loss or exponential loss | Supports custom loss functions and incorporates second-order derivative information | 
-| Regularization | No explicit regularization terms | Introduces L1 and L2 regularization terms to prevent overfitting | 
-| Optimization Algorithm | Based on gradient descent | Based on second-order Taylor expansion for more accurate fitting of the objective function | 
-| Handling Missing Values | No specific mechanism for handling missing values | Built-in strategies for handling missing values | 
-| Parallel Computing | Supports parallel computing, but with relatively lower efficiency | Supports parallel computing and optimizes parallel computing efficiency | 
-| System Optimization | Relatively fewer optimizations | Optimizations for cache, column sampling, etc. |
+> | Feature | GBDT | XGBoost |
+> |---|---|---| 
+> | Loss Function | Primarily uses squared error loss or exponential loss | Supports custom loss functions and incorporates second-order derivatives | 
+> | Regularization | No explicit regularization terms | Introduces L1 and L2 regularization terms to prevent overfitting | 
+> | Optimization Algorithm | Based on gradient descent | Based on second-order Taylor expansion for more accurate approximation of objective function | 
+> | Missing data | No explicit mechanism for handling missing data | Built-in strategies for handling missing data | 
+> | Parallelization | Supports parallel computing, but relatively inefficient | Supports parallel computing and optimizes efficiency | 
+> | System Optimization | Relatively few optimizations | Optimizations for cache, column sampling etc. |
 
-![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXckKpd6QuemcLLCTmy_Uy5alF_wfUX1CHNuw2a-Sc8PDuzJyLOWfvTWsFdcGDFG79E3j37cOkZKweCNWZkXX7Mq29dk7fLoZKtpKDXFGHSVcWbELQaW1jtUN9lpflNjPpszrelV8FlhNU8GZxIUtGQZqzSs?key=LUNIL0RdK8QZOOvRcz6T7w)
+#### What approaches can be used to combat overfitting and underfitting?
 
-#### What methods can be used to combat overfitting and underfitting issues?
-
-Ensemble learning (Bagging, Boosting), model regularization, and regularization techniques in neural networks (Dropout and Early Stopping) are all methods to combat overfitting. When a model exhibits underfitting, feature crossing, more complex models, or searching for new features can be employed.
+> - **Overfitting**: 
+>     - Ensemble learning (Bagging, Boosting).
+>     - L1 and L2 regularization.
+>     - Regularization techniques in neural networks (Dropout and Early Stopping). 
+>  - **Underfitting**: 
+>      - Feature crossing. 
+>      - More complex models and search for new features.
 
 #### List common distance-based clustering and density-based clustering algorithm.  Please provide 3-5 examples.
 
-Common distance-based clustering algorithms include K-Means and hierarchical clustering, while density-based clustering algorithms include DBSCAN, HDBSCAN, etc.
+> Common distance-based clustering algorithms include K-Means and hierarchical clustering. Density-based clustering algorithms include DBSCAN, HDBSCAN, etc.
 
-[\[↑\] Back to top](#数据科学方法与实践思考题)
+[\[↑\] Back to top](#DataScienceInterviewQuestions&Exercises)
 
 ## Chapter 4 Neural Networks and Deep Learning
 
-#### What are some commonly used activation functions? Please compare them in terms of computational complexity, sparsity, and gradient.
+#### What are some commonly used activation functions, and how do they compare in terms of computational complexity, sparsity, and gradient behavior?
 
-* **Sigmoid function**, which transforms input values into a range between 0 and 1, representing the probability of the positive class. The Sigmoid function is a smooth S-shaped curve suitable for binary classification, but the gradient may vanish when the input values are too large or too small.
+> * **Sigmoid function**: maps input values to a range between 0 and 1, representing the probability of a positive class. While useful for binary classification, it may suffer from vanishing gradients with extreme input values.
+> * **Tanh function**: transforms input values to a range between -1 and 1. Similar to Sigmoid but with a wider range, which can sometimes improve performance on data with greater variation.
+>* **ReLU function**: sets negative inputs to 0 and retains positive values. ReLU is computationally simple and widely used, as it avoids the vanishing gradient issue, enhancing model performance in many applications.
+> * **Leaky ReLU function**: modifies ReLU by introducing a small slope for negative values, and mitigates the “dying ReLU” problem. Leaky ReLU maintains a broader activation range, contributing to model stability.
 
-* **tanh function**, which also transforms input values into a range between -1 and 1. It is similar to Sigmoid, but has a wider output range, which can sometimes better handle variations in data.
+#### What are the common regularization methods in deep learning, and how do layer normalization and batch normalization differ?
 
-* **ReLU function**, which turns negative input values to 0 while keeping positive input values unchanged. The ReLU function is simple and effective, commonly used as the default activation function. It helps avoid the vanishing gradient problem and performs well in many cases.
+> Common regularization methods in deep learning include dropout and early stopping. 
+> - **Layer normalization** normalizes across the feature dimensions within a single sample, making it independent of batch size.
+> - **Batch normalization** normalizes across feature dimensions within a batch, which can accelerate training when input size is fixed. For variable input sequences or when batch-size independence is required, layer normalization is preferred. Batch normalization is generally effective when input size is fixed and speed in training is a priority.
 
-* **Leaky ReLU function**, which is an improvement over ReLU. It adds a small slope to negative input values, avoiding the dying ReLU problem. Leaky ReLU allows some negative input values to pass through, maintaining a broader activation range, which contributes to the stability of the model.
+#### What are the application scenarios for one-to-one, one-to-many, and many-to-many configurations in the input and output layers of a Recurrent Neural Network?
 
-#### What are the common regularization methods in deep learning? What are the differences between layer normalization and batch normalization?
+> Recurrent Neural Networks are used in **one-to-one** scenarios like image classification, **one-to-many** scenarios such as image-to-text conversion, and **many-to-many** scenarios like text translation.
 
-Common deep learning regularization methods include Dropout and early stopping. Layer normalization normalizes across the feature dimensions of a single sample, independent of batch size. Batch normalization normalizes across the same feature dimensions of samples within a batch. If the input sequence length of the model is variable, or if normalization should not depend on batch size, then layer normalization is a better choice. If the model input size is fixed and normalization is desired to accelerate model training, then batch normalization is a good choice.
+#### Why do transformers handle massive datasets better than recurrent neural networks and avoid gradient explosion?
 
-#### What are the application scenarios for one-to-one, one-to-many, and many-to-many in the input and output layers of a Recurrent Neural Network?
+> Transformers outperform RNNs due to their strong parallel processing capabilities, effective long-range dependency modeling, and resilience to gradient vanishing or explosion when handling large datasets. Layer normalization in transformers helps mitigate gradient explosion.
 
-The one-to-one application scenario of recurrent neural networks is image classification, one-to-many scenarios such as image-to-text conversion, and many-to-many scenarios like text translation.
+#### In which tasks have transformers excelled? What are the future trends?
 
-#### Why can transformers fit massive data better than recurrent neural networks and avoid gradient explosion?
+> Transformers have demonstrated exceptional sequence modeling abilities, achieving remarkable results in fields such as natural language processing, computer vision, and speech recognition. Future trends include enhancing multimodal capabilities, scaling models further, reducing computational and inference costs, and integrating with technologies like reinforcement learning and knowledge graphs.
 
-Compared to RNNs, transformers have advantages such as strong parallel computing capability, strong long-distance dependency modeling ability, and the ability to avoid gradient vanishing/explosion when processing massive data. Transformers alleviate gradient explosion through layer normalization.
+[\[↑\] Back to top](#DataScienceInterviewQuestions&Exercises)
 
-#### In which tasks have transformers achieved good results? What are the future development trends?
+## Chapter 5 Data Science Workflow
 
-The Transformer model has powerful sequence modeling capabilities and has achieved significant results in various fields such as natural language processing, computer vision, and speech recognition. Future development trends include multimodal capabilities, larger-scale models, lower computational and inference costs, and integration with technologies such as reinforcement learning and knowledge graphs.
+#### How should one choose between manual and automated feature engineering? In which scenarios is each approach preferable?
 
-[\[↑\] Back to top](#数据科学方法与实践思考题)
+> The choice depends primarily on **domain knowledge** and **feature quantity**. Manual feature engineering is generally preferred when domain knowledge is rich, there is a deep understanding of the data, and the number of features is manageable. In contrast, automated feature engineering is more suitable when domain knowledge is limited, the dataset is large, manually designing features is costly, and model interpretability requirements are lower.
 
-## Chapter 5 The data science workflow
+#### How can continuous features be bucketed based on data distribution, and what are the pros and cons of distribution-based bucketing?
 
-#### How to choose between manual feature engineering and automated feature engineering, specifically in which situations to use manual feature engineering and in which situations to use automated feature engineering?
+> A common approach is to bucket based on data quantiles. This method ensures uniform sample sizes across buckets but results in non-integer boundaries and may be affected by distribution drift.
 
-First, it depends on domain knowledge, whether one understands the physical meaning of the features; second, it depends on the number of features. Typically, when domain knowledge is rich, there is an in-depth understanding of the data, and the number of features is small, manual feature engineering is employed. In contrast, when domain knowledge is limited, or the data volume is large, the cost of manually designing features is too high, and there are low requirements for model interpretability, automated feature engineering is used.
+#### What data collection methods have you encountered or used in past work?
 
-#### How to bucket continuous features based on data distribution, and what are the advantages and disadvantages of distribution-based bucketing?
+> Methods include transaction data from terminal devices, web data scraped from the internet, user behavior logs, and sensor data from vehicles.
 
-Usually, we bucket based on the quantiles of the data; the advantage is that the sample sizes in each bucket are uniform, while the disadvantage is that the bucket boundaries are not integer values and are affected by distribution drift.
+#### How are missing values commonly handled?
 
-#### Reflecting on past work, what data collection methods have you encountered or used?
+> Common methods include modeling the missing data mechanism, treating missingness as a binary variable, and employing imputation techniques like mean and regression imputation.
 
-Transaction data recorded by terminal devices, web data crawled from the internet, user behavior logs, data returned from car sensors, etc.
+#### What are common methods for detecting outliers?
 
-#### What are the common methods for handling missing values?
+> Outlier detection methods are generally categorized as statistical-based and density-based.
+>
+> **Statistical-based methods** include:
+>- **The 3$\sigma$ principle:** Assumes a normal distribution, with data points beyond the mean ± 3 standard deviations considered outliers.
+>-  **Box plot method:** Identifies outliers using the upper and lower quartiles and 1.5 times the interquartile range.
+>- **Z-score method:** Standardizes data and flags points as outliers if their Z-scores exceed a specified threshold.
+>
+>**Density-based methods** include:
+> - **DBSCAN clustering:** Classifies points as core, border, or noise, with noise points identified as potential outliers.
+> - **LOF (Local Outlier Factor):** Measures outlyingness by comparing the local density of each point to that of its neighbors.
 
-Common methods include (1) modeling the missing data mechanism, treating whether data is missing as a binary categorical variable for modeling; (2) using imputation algorithms such as mean imputation and regression imputation.
+[\[↑\] Back to top](#DataScienceInterviewQuestions&Exercises)
 
-#### What are the common methods for detecting outliers? Common methods include statistical-based methods and density-based methods.
+## Chapter 6 Data Storage and Computation
 
-Statistical-based methods include:
+#### Design a database system for a convenience store that tracks transaction time, user, itemized products (quantity and price), and allows for product returns.
 
-1. **The 3$\sigma$ principle:** Assuming the data follows a normal distribution, data points that exceed the mean ± 3 standard deviations are considered outliers;
-2. **Box plot method:** Determine the range of outliers through the upper and lower quartiles of the box plot and 1.5 times the interquartile range;
-3. **Z-score method:** Standardize the data and calculate the Z-score for each data point, with points exceeding a certain threshold considered as outliers.
+>* Requirements:
+> --   Track transaction time, user ID, and multiple products per order.
+> --   Record product name, quantity, and unit price for each item.
+>--   Accommodate product returns.
 
-Density-based methods include:
+> **Table Design:**
 
-1. **DBSCAN clustering:** Classifies data points into core points, border points, and noise points, where noise points can be considered as outliers;
-2. **LOF (Local Outlier Factor):** Determines the degree of outlierness by calculating the ratio of the local density of each data point to the local density of its neighbors.
-
-[\[↑\] Back to top](#数据科学方法与实践思考题)
-
-## Chapter 6 Data Storage and Processing
-
-#### In the convenience store example, we need to store the transaction time, transaction user, quantity of goods, and price for each order, but allow users to return items they are not interested in. Please design a database system.
-
-* Understanding Requirements: The order includes transaction time, transaction user, and multiple product items. Product items include product name, quantity, and unit price. Returns: Users can return some products in the order.
-
-* Table Design:
-
-1. **Order Table (orders)**: Includes order\_id (primary key): Order ID, customer\_id: Customer ID, order\_time: Order creation time, total\_amount: Total order amount, status: Order status (Pending Payment, Paid, Completed, Canceled);
+~~1. **Order Table (orders)**: Includes order\_id (primary key): Order ID, customer\_id: Customer ID, order\_time: Order creation time, total\_amount: Total order amount, status: Order status (Pending Payment, Paid, Completed, Canceled);
 2. **Order details table（order\_items）**: Includes item\_id (primary key): Order detail ID, order\_id (foreign key): Associated order table, product\_id: Product ID, quantity: Product quantity, unit\_price: Unit price;
 3. **Product Table (products)**: Includes product\_id (primary key): Product ID, product\_name: Product name, category: Product category, price: Product price;
-4. **Returns Record Table (returns)**: Includes return\_id (primary key): Return Record ID, order\_item\_id (foreign key): Associated Order Detail Table, return\_quantity: Return Quantity, return\_time: Return Time
+4. **Returns Record Table (returns)**: Includes return\_id (primary key): Return Record ID, order\_item\_id (foreign key): Associated Order Detail Table, return\_quantity: Return Quantity, return\_time: Return Time~~
 
-#### Assuming we read the price of each transaction in streaming data, how can we calculate the median price?
+#### How can we calculate the median price from a stream of transaction prices?
 
-The median price can be approximately calculated based on the frequency distribution by bucketing the prices and accumulating the frequency of each price range in the streaming data.
+> We can approximate the median price by bucketing prices and tracking the frequency of each bucket in the data stream.
 
-#### Some vector search packages can also be used for vector clustering and searching, so why do we still introduce a vector database?
+#### Why use a vector database when vector search packages exist?
 
-Vector search packages are more suitable for small-scale, single-machine environments for vector data processing and do not provide vector persistence. Vector databases are more suitable for the storage and retrieval of vector data in large-scale, distributed environments, providing more comprehensive functionality and higher performance. Choosing the right tool depends on the specific application scenario: if the data volume is not large and performance requirements are not high, a vector search package may be sufficient. If the data volume is enormous and high performance and availability are required, a vector database is the better choice.
+> Vector search packages are optimized for small-scale, single-machine vector processing without persistence. Vector databases excel in large-scale, distributed environments, offering robust storage, retrieval, and advanced features. The design choice depends on factors like data volume, performance needs, and required functionality. For small-scale applications with modest performance demands, a vector search package may suffice. However, for large-scale, high-performance scenarios, a vector database is the preferred solution.
 
-#### What is the differences between a data warehouse and a data lake?
+#### What are the key differences between data warehouses and data lakes?
 
-See the comparison of data warehouses and data lakes in Table 6-7.
+> Refer to Table 6-7 for a comparison of data warehouses and data lakes.
 
-#### Given the attendance record of a class, along with the date, user ID, and whether they were present that day (1 for present, 0 for absent), please find all student IDs that have been absent for more than 3 consecutive days.
+#### Given a dataset of student attendance records (date, user ID, and attendance status), identify students with more than 3 consecutive absences.
 
-The core of the problem lies in how to identify continuous absence segments in attendance data. This is a classic 'Gaps and Islands' problem in SQL. The idea is to sort the absence dates for each student and then perform a difference operation; a difference result of 1 indicates that they belong to the same continuous absence segment.
+> The core challenge is identifying continuous absence segments within the attendance data. This is a common **"Gaps and Islands"** problem in SQL. The solution involves sorting absence dates for each student and using a difference operation to group consecutive absences.
 
-[\[↑\] Back to top](#数据科学方法与实践思考题)
-
+[\[↑\] Back to top](#DataScienceInterviewQuestions&Exercises)
 # Chapter 7 Data Science Technology Stack
 
-#### Given an XGBoost model trained with Python, please describe how to deploy this model in a production environment. The main steps are as follows:
+#### How can an XGBoost model, trained in Python, be deployed to a production environment?
+> -   **Model Serialization:** Save the trained model using XGBoost's built-in methods, Pickle, or Joblib.
+> -   **Model Loading:** Load the serialized model in the production environment using the appropriate library.
+> -   **Deployment Platform:** Choose a suitable deployment platform (local or cloud-based).
+> -   **Model Serving:** Create a service layer (e.g., REST API, gRPC) to expose the model for predictions.
 
-1. Use XGBoost's built-in methods, Pickle, or Joblib to save the trained model as a file.
+#### Compare and contrast common hyperparameter tuning techniques: Greedy Search, Grid Search, and Bayesian Optimization.
 
-2. In the production environment, use the corresponding library to load the saved model file.
+> | Method | Advantages | Disadvantages | Best Suited For | 
+> |---|---|---|---| 
+> | Greedy Search | Simple, efficient | Prone to local optima | Initial exploration, few parameters |
+> | Grid Search | Reliable, global optimum | Computationally expensive| Small search space, abundant resources | 
+> | Bayesian Optimization | Efficient, finds good solutions | Complex implementation | Large search space, limited resources |
 
-3. Choose an appropriate deployment platform (local or cloud).
+#### How can we evaluate a click-through rate (CTR) prediction model, both offline and in real-time? What challenges might arise during this evaluation?
 
-4. Service the model, such as building a RESTful API or gRPC service.
+> Offline Evaluation:
+> -   **Metric:** Cross-entropy is a common choice for evaluating CTR prediction models.
+>-   **Offline evaluation:** A held-out test set is used to compare predicted CTRs with actual click outcomes.
+>- **Real-time Evaluation:** Compute cross-entropy in real-time using online traffic.
+>
+> Challenges:
+>    -   **Selection Bias:** Online traffic may be skewed towards high-potential clicks.
+>    -   **Click Delay:** Time delays between exposure and click can impact metric calculation.
+>    -   **Sample Leakage:** Ensuring test data is independent of training data.
+>
+> To mitigate these challenges, consider techniques like:
+>-   **Random Traffic Evaluation:** Evaluating model performance on randomly selected traffic.
+>-   **Time-Decayed Metrics:** Adjusting metric calculations to account for click delays.
+>-   **Strict Data Partitioning:** Preventing test data leakage into training.
 
-#### Please compare common methods for hyperparameter tuning of machine learning models (Greedy, GridSearchCV, and Bayesian).
+#### Outline the offline training and online deployment processes for a comment quality scoring model, along with potential technology choices.
 
-![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXcth64AhIZS1bg2G_coE4gbOZmo1wlDPKiFxJEABGxvwDFOCZJwMV3MF66xalIIwe5DO0YztUvV0GFwTFfNvqVU8to45wgTDxEeL96gszCbB6AcCOaBhmX6DB78vPOAzAnVJ4zaSwUQXW3oRIqpgguPE7xw?key=LUNIL0RdK8QZOOvRcz6T7w)
+> Offline Training:
+>-  **Data Preparation:** Collect, clean, and label comment data.
+>-  **Model Selection and Architecture:** Choose a suitable model architecture (e.g., TextCNN, LSTM, BERT) and define the loss function and optimizer.
+>-  **Model Training:** Train the model using a deep learning framework like PyTorch and evaluate its performance on a validation set.
+>
+> Online Deployment:
+>- **Model Serialization:** Save the trained model in a suitable format (e.g., PyTorch's `.pt` format).
+>- **Deployment Platform:** Choose a deployment platform (e.g., TorchServe, TensorFlow Serving, cloud-based platforms, containerization) to host the model.
+> - **Model Serving:** Create a service layer (e.g., REST API, gRPC) to expose the model for prediction requests.
+> 
+> Technology Stack:
+> * PyTorch: Deep learning framework
+> * NLTK/spaCy：自然语言处理工具
+> * Flask/FastAPI：Web框架
+> * Docker: Containerization technology
+> * Kubernetes: Container orchestration platform
+> * Cloud Service Platforms: AWS SageMaker, Google Cloud AI Platform, etc.
 
-#### Assuming we have a click-through rate prediction model that outputs predicted click-through rates between 0 and 1. Please briefly describe how to calculate the evaluation metrics for this model offline and in real-time. What issues arise in the calculation of evaluation metrics?
+[\[↑\] Back to top](#DataScienceInterviewQuestions&Exercises)
 
-Cross-entropy can be chosen as the evaluation metric. Offline evaluation is conducted after the model training is completed, using an independent test set to assess model performance. Real-time evaluation is performed after the model is deployed in the online environment, assessing online traffic. Common computational issues include (1) selection bias: online traffic typically consists of users and ad combinations that are inclined to click, and it is possible to calculate separately on online traffic and random traffic; (2) Click delay: the delay between exposure and click affects the calculation of cross-entropy; (3) Sample leakage: ensuring that the test data is not used for model training.
+# Chapter 8 Product Analytics
 
-#### Taking the comment quality scoring model as an example, briefly describe how to perform offline training and online deployment of the model, and list the possible technology stack used.
+#### How can the overall average income decrease while the average income of every ethnic group increases?
 
-Offline Training Phase
+> This is a classic example of Simpson's Paradox, where the overall trend contradicts the trends within subgroups due to a confounding variable, in this case, changes in the demographic composition of the US population.
 
-* Data Preparation: Collect, clean, and label comment data, and divide the dataset.
+#### What is selection bias, and how can it be mitigated in research?
 
-* Model Construction: Choose an appropriate model architecture (such as TextCNN, LSTM, BERT), define the loss function and optimizer.
+> Selection bias occurs when the sample used for a study is not representative of the population of interest. This can lead to misleading conclusions. Common types of selection bias include:
+> -   **Survivor Bias:** Focusing on surviving cases, ignoring those that didn't.
+>-   **Response Bias:** Non-response or biased responses from certain groups.
+>-   **Truncation Bias:** Excluding certain groups based on a specific criterion.
+>-   **Confirmation Bias:** Seeking evidence that confirms existing beliefs.
+>
+>To mitigate selection bias:
+>-   **Random Sampling:** Ensure a representative sample from the population.
+> -   **Random Assignment:** Randomly assign subjects to treatment and control groups.
+> -   **Control Groups:** Use appropriate control groups for comparison.
+> -   **Statistical Techniques:** Employ techniques like post-stratification, regression analysis, or propensity score matching to adjust for bias.
 
-* Model Training: Using PyTorch for model training and evaluating model performance.
+#### Describe the user registration funnel for a product you frequently use. Identify potential optimization areas and propose data-driven strategies to improve the funnel.
 
-Online Deployment
+> Refer to Figure 8-13 for a visual representation of a ride-hailing driver's registration funnel.
 
-* Model Saving: Save the trained model as a file.
+#### How can we analyze the supply-demand dynamics of user-generated content (e.g., short videos, images) on social platforms?
 
-* Deployment Platform Selection: Choose an appropriate deployment platform (such as TorchServe, TensorFlow Serving, cloud service platforms, containerization platforms).
+>Example: Short Video Content.
+> **Supply-Side Analysis:**
+> - **Upload Volume:** Analyze the daily volume of uploaded short videos and identify trends.
+> - **Topic Categorization:** Classify videos by vertical (e.g., food, travel, education) to identify popular and niche segments.
+> - **Video Quality:** Assess video quality (clarity, editing, originality) and analyze the distribution of video quality levels.
 
-* Model Service: Provide REST API, gRPC, and other interfaces for client calls.
+> **Demand-Side Analysis:**
+> - **Viewership:** Analyze daily video views and identify trends.
+> - **User Engagement:** Assess user engagement through metrics like likes, comments, and shares to understand viewer preferences.
+> -  **User Demographics:** Analyze user demographics (gender, age, region) to identify content preferences based on user segments.
+> 
+>This approach provides a foundational framework for analyzing the supply-demand dynamics of short video content on social platforms.
 
-Technology Stack
+#### An e-commerce platform experienced an 8% year-over-year increase in GMV. Analyze the potential drivers of this growth using data-driven insights.
 
-* PyTorch: Deep learning framework
+> To uncover the drivers of this growth, consider the following analyses:
+>
+> -   **User Segmentation:** Analyze GMV trends across different user segments (gender, location, new vs. returning users).
+> -   **Product Segmentation:** Examine GMV performance by product category to identify top-performing categories.
+> -   **Time Series Analysis:** Analyze GMV trends over time (monthly, weekly, daily) to identify seasonal or cyclical patterns.
+> -   **Traffic Source Analysis:** Analyze GMV performance across different traffic sources (homepage, category pages, search results) to identify high-converting channels.
+>
+>By conducting these analyses, we can gain valuable insights into the factors contributing to the GMV growth and identify potential areas for further optimization.
 
-* NLTK/spaCy：自然语言处理工具
-
-* Flask/FastAPI：Web框架
-
-* Docker: Containerization technology
-
-* Kubernetes: Container orchestration platform
-
-* Cloud Service Platforms: AWS SageMaker, Google Cloud AI Platform, etc.
-
-[\[↑\] Back to top](#数据科学方法与实践思考题)
-
-# Chapter 8 Product Analysis
-
-#### Why has the overall average income level decreased, even though the average income level of every ethnic group in the United States has increased compared to ten years ago?
-
-This is a typical example of Simpson's Paradox, considering the impact of immigration policies on the changing proportions of different ethnic groups in the United States.
-
-#### What is selection bias? What are the common methods for eliminating selection bias to obtain scientific conclusions?
-
-Selection bias refers to the presence of bias in the selection process of experimental samples, leading to a lack of representativeness in the samples. Common types of selection bias include survivor bias, response bias, truncation bias, and confirmation bias. During the research design phase, random sampling and random assignment of experimental conditions can ensure that the samples are representative, and selecting appropriate control groups can enhance the credibility of the research results. During the analysis phase, methods such as post-stratification, regression analysis, or propensity score matching (PSM) can be used to reduce the impact of selection bias.
-
-#### Please describe the registration funnel of a product you frequently use, propose ideas for optimizing the new user registration process, and validate them with data.
-
-Refer to the registration funnel of ride-hailing drivers in Figure 8-13.
-
-#### Please provide an analytical approach to the supply and demand relationship of content (such as short videos or graphic content) on social platforms.
-
-* Taking short videos as an example
-
-* Supply-side analysis:
-
-1. Daily upload quantity: Count the number of short videos uploaded each day and analyze the trend of upload volume changes.
-
-2. Vertical field analysis: Classify short video content according to different vertical fields (such as food, travel, education, etc.), count the upload quantity in each field, and identify popular and niche areas.
-
-3. Video Quality Analysis: Classify videos into different quality levels based on metrics such as clarity, editing quality, and originality of content, and count the number of uploads for each quality level.
-
-* Demand Side Analysis:
-
-1. View Count Statistics: Count the daily view count of short videos and analyze the trend of view count changes.
-
-2. Interaction Metrics: Analyze user demand for different videos based on user interaction data such as likes, comments, and shares.
-
-3. User Profile: Analyze which types of users prefer certain categories of short video content based on information such as gender, age, and region.
-
-The above is the basic idea for analyzing the supply and demand relationship of short video content on social platforms.
-
-#### The GMV (Gross Merchandise Value) of a certain e-commerce platform has increased by 8% year-on-year. Please analyze the possible reasons behind this based on data.
-
-Multiple group analyses can assist in identifying the underlying reasons:
-
-* Based on user segmentation: conduct segmentation analysis by user gender, geographical location, new vs. old users, etc.;
-
-* Based on product segmentation: analyze by product category and check whether popular products have driven the overall GMV;
-
-* Time series analysis: consider whether the impact is due to monthly or weekly trends, or specific holiday effects.
-
-* Transaction page source analysis: break down by page (homepage, category page, search results page) to see if there are changes in transactions brought by different pages;
-
-[\[↑\] Back to top](#数据科学方法与实践思考题)
+[\[↑\] Back to top](#DataScienceInterviewQuestions&Exercises)
 
 ## Chapter 9 Metrics
 
-#### Assuming we consider that the subscription-based Netflix streaming platform increased its subscriber count by 6% by lowering the monthly fee from $11.99 to $9.99. How should we evaluate whether the monthly fee should be reduced?
+#### How should Netflix evaluate the impact of a price reduction from $11.99 to $9.99, which led to a 6% increase in subscribers?
 
-The main focus is on metric formulation and selection. If revenue from subscription users is used as a measure, the growth of subscription users is insufficient to offset the loss from declining monthly fees. In actual decision-making, cost factors, other businesses such as advertising revenue, and the impact on long-term income will also be considered.
+> A key metric to consider is the impact on overall revenue. While a 6% subscriber increase is positive, it must be weighed against the revenue loss from the price reduction. Other factors, such as operating costs, potential advertising revenue, and long-term subscriber retention, should also be factored into the decision.
 
-#### How can we use a metric system to measure the quality of content viewed by users on platforms like Toutiao?
+#### How can we measure user engagement and content quality on platforms like Toutiao?
 
-1. User interaction metrics: Click-Through Rate (CTR), reading duration, likes, comments, shares, etc.
-2. Content quality metrics: Content relevance, freshness, richness.
-3. User feedback metrics: User satisfaction surveys, negative feedback.
-4. Recommendation Metric: Content Distribution Efficiency.
+> Here are some potential metrics to consider: 
+> - User interaction metrics: Click-Through Rate (CTR), time spent, likes, comments, shares, etc.
+> - Content quality metrics: Content relevance, freshness, diversity.
+> - User feedback metrics: NPS from user survey, user feedback.
 
-#### How to set target metrics for short video platforms such as Douyin?
+#### What are key business metrics for short video platforms like Tiktok?
 
-From a macro perspective, consider user growth metrics (DAU, MAU, user retention rate) and revenue metrics (advertising revenue, e-commerce revenue, proportion of paying users). For content communities, attention will also be paid to content creation metrics (number of content creations, number of creators, number of creators earning revenue) and user engagement metrics (playback, likes, comments, etc.).
+> Key business metrics for Short Video Platforms:
+> -  User Growth: Daily Active Users (DAU), Monthly Active Users (MAU), User Retention Rate.
+> -  User Engagement: Video Views, Likes, Comments, Shares.
+> -  Monetization: Advertising Revenue, E-commerce Revenue, Paying User Ratio.
+> -  Content Ecosystem: Content Creation Rate, Number of Creators, Creator Revenue.
 
-#### What metrics are used to measure the relevance of search results?
+#### How can we measure search result relevance?
 
-The relevance of search results can be measured through subjective evaluation and objective evaluation. Subjective evaluation requires the establishment of evaluation standards, labeling results through manual evaluation or large language models, and calculating metrics such as NDCG. Objective evaluation can be conducted through user behavior metrics such as click-through rate, long play rate, and bounce rate.
+> Measuring Search Relevance:
+> -   Subjective Evaluation: define evaluation criteria, manually label search results or use LLMs, calculate metrics like Normalized Discounted Cumulative Gain (NDCG).
+>
+> -   User behavior metrics:
+>        -   Click-Through Rate (CTR)
+>        -   Long Play Rate
+>        -   Bounce Rate
+#### How can we balance content quality and user engagement when moderating low-quality content?
 
-#### If we suppress low-quality content on the platform, it may lead to a decline in user activity levels and even some user attrition. In this case, how should product decisions be made?
+>* Suppressing low-quality content can impact user engagement and creator retention. A balanced approach requires careful consideration of platform tone, revenue goals, and creator incentives.
+>
+>* Define the platform's long-term vision: Should it prioritize high-quality content for user satisfaction or focus on content quantity for rapid growth?
+>
+> * Quantify the impact of low-quality content on user engagement by analyzing metrics like time spent and engagement rates. Conduct A/B tests to measure the effectiveness of different content moderation strategies.
+>
+>* Consider the broader impact of content moderation on the platform's tone, revenue, and creator ecosystem. Develop strategies to incentivize high-quality content creation while minimizing negative impacts on the community.
 
-* When the platform suppresses low-quality content, it faces the risk of declining user activity levels and creator attrition, which requires a comprehensive consideration of multiple dimensions such as platform tone, revenue metrics, and creator impact.
-
-* Clarify the platform's long-term goals: Should it emphasize high-quality content to enhance user satisfaction and retention, or prioritize quantity for rapid growth? Is the aim to create a high-quality, valuable platform, or to focus more on entertainment and diversity?
-
-* Assessing the impact of low-quality content on the platform: Quantifying the effects of low-quality content on user duration and interaction metrics through data analysis and low-quality content filtering experiments;
-
-* Considering various factors: Taking into account the platform's tone, the impact on revenue metrics, and the effect on creators (whether creators of low-quality content will churn or shift towards content encouraged by the platform) to formulate response strategies.
-
-[\[↑\] Back to top](#数据科学方法与实践思考题)
+[\[↑\] Back to top](#DataScienceInterviewQuestions&Exercises)
 
 ## Chapter 10 A/B Testing
 
-#### What could cause sample ratio mismatch (SRM) in A/B testing, and what governance measures are available?
+#### What are the common causes of sample ratio mismatch (SRM) in A/B testing, and how can we mitigate it?
 
-SRM may arise from issues with the random generator (users, sessions, page views, clicks, etc. not being allocated in a truly random manner from the outset), technical problems in experiment delivery (different probabilities of seeing the test variant), issues with log collection (different probabilities of data collection), or reporting errors. In addition, measures taken to ensure data quality, such as bot filtering, can also impact user allocation between experimental groups. The SRM problem can be addressed through SRM ratio monitoring and bucket uniformity verification to ensure the reliability of experimental data, and more scientifically valid experimental conclusions can be obtained through methods such as controlling variables and PSM (Propensity Score Matching).
+> Sample ratio mismatch (SRM) can occur due to various factors, including:
+>
+> -   **Randomization Issues:** The random generator may not allocate users evenly to test and control groups.
+> -   **Technical Implementation Errors:** Differences in how test variants are delivered or logged.
+>-   **Data Quality Measures:** Filtering out bots or low-quality traffic can unintentionally skew the sample.
+>
+> To mitigate SRM and ensure accurate A/B test results:
+>
+> -   **Monitor SRM Ratios:** Continuously track the distribution of users across test and control groups.
+> -   **Verify Randomization Effectiveness:** Ensure that users are evenly distributed across buckets.
+> -   **Employ Statistical Techniques:** Use methods like propensity score matching (PSM) to control for confounding variables.
 
-#### Let us consider the scenario of new user registration and focus on the number of user behaviors on the platform after registration. In this scenario, should A/B testing use user segmentation or device segmentation?
+#### AB test can be conducted at user level or device level. For new user registration, shall we use device-level or user-level?
 
-In this scenario, it is recommended to use device segmentation. Device IDs already exist before user registration and can serve as unique identifiers for assigning experimental groups. However, the limitations of a single user using multiple devices must also be considered.
+> **For new user registration, device-level A/B testing is generally preferred.**
+>This approach offers several advantages:
+> -   **Reliable Identification:** Device IDs provide a consistent identifier, even for anonymous users.
+> -   **Avoids Multiple Exposures:** Ensures each device sees only one variant.
+> -   **Simplified Implementation:** Easier to set up and track.
+>
+>However, be mindful of potential limitations:
+>-   **Multiple Devices per User:** A single user might use multiple devices, potentially diluting the test's impact.
+>
+>To mitigate this, consider using a combination of device and user-level data or advanced statistical techniques.
+>
+#### What is Poorman's bootstrap, and how can it be implemented?
 
-#### Please introduce Poorman’s bootstrap and write the pseudocode for executing Poorman’s bootstrap.
+> Poorman's bootstrap is a technique used to estimate the variance of a statistic, particularly in the context of A/B testing. It involves dividing the data into multiple buckets, calculating the statistic for each bucket, and then estimating the variance based on the variability between the bucket-level statistics.
+>
+> Pseudocode for Poorman's Bootstrap:
+> 1.  Divide the data into `B` buckets of equal size.
+>2. Calculate Statistic for Each Bucket: For each bucket `i`, calculate the statistic of interest (e.g., mean, difference in means).
+>3.  Estimate Variance: Calculate the variance of the `B` bucket-level statistics, use this variance as an estimate of the true variance of the statistic.
+>
+>By using Poorman's bootstrap, we can obtain a more accurate estimate of the variance, leading to more reliable statistical inferences.
 
-There is no unified definition of Poorman’s bootstrap in the literature; in the context of A/B testing, Poorman’s bootstrap is a method to address the efficiency loss caused by sampling with replacement. This method buckets the data, calculates the metrics of interest for each bucket, and computes the variance by examining the variance between the metrics of the buckets.
+#### How can we reduce the variability of experimental metrics?
 
-#### What are common methods to reduce the fluctuation of experimental metrics?
+> Common techniques to stabilize experimental metrics include:
+> -   **Data Transformation:** Applying transformations like log or square root to normalize the distribution.
+> -   **Truncation:** Limiting the range of the metric to reduce the impact of extreme values.
+> -   **Outlier Removal:** Identifying and removing outliers that can distort the results.
+> -   **Statistical methods:** Using techniques like CUPED or stratified sampling to control for confounding factors.
 
-Common methods to reduce the fluctuation of experimental metrics include metric transformation, truncation, and outlier removal, which are relatively lightweight yet effective methods. Additionally, controlling variables can reduce metric fluctuations, such as CUPED or stratified sampling.
+#### To what extent has your company integrated experimentation into its decision-making process (crawling, walking, running, or flying)?
 
-#### Please recall the feedback on the A/B testing platforms used in past work. What level is the company's experimental culture at (crawling, walking, running, or flying)?
+[\[↑\] Back to top](#DataScienceInterviewQuestions&Exercises)
 
-[\[↑\] Back to top](#数据科学方法与实践思考题)
+## Chapter 11 Models in Search, Recommendation and Advertising
 
-## Chapter 11 Search Recommendation Advertising Models
+#### How do search and recommendation systems differ in terms of user intent, business objectives, user profiling, and personalization?
 
-#### The two main ways users acquire information are through search and recommendation. Please explain the differences between search and recommendation from the perspectives of user intent, business objectives, user profiles, and personalization.
+> Refer to Table 11-1 for a detailed comparison.
 
-See Table 11-1 for details.
+#### What is the TF-IDF formula, and how does it work?
 
-#### Please write out the formula for TF-IDF and explain its meaning.
+~~The TF-IDF formula is:
+$$ TF-IDF (t, d) = TF(t, d) * IDF(t)$$
+Where TF has multiple variants, which can use raw frequency, relative frequency, or logarithmic frequency. IDF (Inverse Document Frequency) is typically calculated using the following formula:~~
 
-The formula for TF-IDF is as follows:
+#### How does the PageRank algorithm work?
 
-![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXeTQYLgfJBbV8D4nCyZXM0VI0r2PJuhGdMcpb8HYcLI-LDhx5lnotCHD7t1i_f91tJ-_C25et3y_-cUOn0nKktylNUZR7ISb9iSUUjg5enFjXkr3g4YnUvfytNS2fWfdHdJIwZsW8xlpDe645IIig-mW-0L?key=LUNIL0RdK8QZOOvRcz6T7w)
+> The PageRank algorithm iteratively assigns a rank to each webpage based on the number and quality of incoming links. Here's a simplified overview of the process:
 
-Where TF has multiple variants, which can use raw frequency, relative frequency, or logarithmic frequency. IDF (Inverse Document Frequency) is typically calculated using the following formula:
+> 1.  **Initialization:** Assign an equal initial PageRank value to each webpage.
+> 2.  **Link Analysis:** Calculate the out-degree of each webpage (the number of outgoing links).
+> 3.  **Damping Factor:** Set a damping factor (usually 0.85) to account for random surfing behavior.
+> 4.  **Iterative Update:** For each webpage:
+>       a. Calculate the sum of PageRank values from incoming links, weighted by the source page's out-degree.
+>       b. Multiply this sum by the damping factor.
+>       c. Add a damping factor multiplied by a constant (usually 1/N, where N is the total number of webpages).
+> 5.  **Convergence:** Repeat the iterative update process until the PageRank values stabilize or a maximum number of iterations is reached.
+>
+> The mathematical representation of the PageRank update formula is:
+>$$R = dMR + \frac{1-d}{n} 1 $$
+>
+>where $R$ is the $n$-dimensional PageRank value vector, $M$ is the state transition matrix, and $1$ represents an n-dimensional vector with all elements equal to 1.
 
-![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXfuEMJWxdyVZmPC0kgwIFH0oR-rvEMNWOdhQTpb3WA_jao2ITFnq6bvobb73btpUofWzCUrU5BN4hclH8yWSKAp9auAxYz9UcVdlP4Ojdziih82YK_U-O-d20Trc_tyPhm_bOgGHyWQEgHcl89Y53EbqKqX?key=LUNIL0RdK8QZOOvRcz6T7w)
+#### How does a two-tower neural network model work in both offline training and online serving?
 
-#### Please describe the steps of the PageRank algorithm.
+> **Offline Training:**
+> -  **Feature Engineering:** Extract and preprocess user and item features.
+> - **Model Architecture:** Construct separate neural networks for users and items.
+> - **Negative Sampling:** Generate negative samples to train the model to distinguish between relevant and irrelevant items.
+> - **Model Training:** Train the model to learn embeddings that capture user preferences and item attributes.
+>
+> **Online Serving:**
+> -  **User Feature Extraction:** Extract features for the active user.
+> - **Similarity Calculation:** Calculate the similarity between the user's embedding and the embeddings of all items.
+> - **Ranking:** Rank items based on similarity scores and return the top N recommendations.
 
-The implementation steps of the PageRank algorithm are roughly as follows:
+#### How does the FTRL algorithm differ from SGD in terms of regularization, learning rate adaptation, historical information utilization, and application scenarios?
 
-1. 假设有n个网页，初始化每个网页的PageRank值为1/n。
+> | Feature | SGD | FTRL |
+> |---|---|---| 
+> | Regularization | L1/L2 | Adaptive L1+L2 | 
+> | Learning Rate | Fixed or Decaying | Adaptive | 
+> | Historical Information | Uses less | Uses fully | 
+> | Use Cases | General | Sparse Data |
 
-2. Ignore self-links or multiple links between the same webpage. Calculate the out-degree of each webpage (i.e., the number of links to other webpages).
-
-3. Choose a damping factor d (usually 0.85).
-
-4. Iteratively update the PageRank value of each webpage until convergence or the maximum number of iterations is reached. The update formula is shown below, where R is the n-dimensional PageRank value vector, M is the state transition matrix, and 1 represents an n-dimensional vector with all elements equal to 1.
-
-![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXdklc9Ba2m-QZ3njNy06pBzydA_wklqINGmV3lx-qOizh5m4h3DjgaR94QfVIV_x7nXhAvqsXjDq2bqzlcMgWiZYEBgdFBd6_szQ5wXBdCCUWDY3s2ggjDgQU5zPA1gdVJQpnEJ0XNUbGRlmNiCWDdOXGpz?key=LUNIL0RdK8QZOOvRcz6T7w)
-
-#### Please describe the offline training and online service process of the dual-tower neural network model.
-
-* The dual-tower neural network model is widely used in recommendation systems. The dual-tower neural network model constructs a user tower and an item tower during model training, transforming raw features into dense vector representations, and uses negative sampling to construct negative samples. Online services focus on model deployment and real-time prediction. In response to user requests, extract the user feature vector, calculate the similarity between the user vector and all item vectors, and return the TopN recommendation results.
-
-#### What are the differences between the FTRL algorithm and other online learning algorithms such as SGD in terms of regularization methods, learning rate adjustment, historical information usage, and application scenarios?
-
-| Feature | SGD | FTRL |
-|---|---|---| 
-| Regularization | L1/L2 | Adaptive L1+L2 | 
-| Learning Rate | Fixed or Decaying | Adaptive | 
-| Historical Information | Uses less | Uses fully | 
-| Use Cases | General | Sparse Data |
-
-[\[↑\] Back to top](#数据科学方法与实践思考题)
+[\[↑\] Back to top](#DataScienceInterviewQuestions&Exercises)
 
 ## Chapter 12: Recommender Systems
 
-#### What metrics does the recommendation recall model use for evaluation?
+#### How can we evaluate the performance of a recommendation retrieval model?
 
-When evaluating, it is necessary to consider the individual effect of each recall source and the net benefit compared to other recall sources. Individual evaluation: Typically conducted offline, the metrics used include top K accuracy, recall rate, F1 score, and hit rate, among others. Comparative evaluation is based on the premise of having other recall sources, assessing the additional gain from this recall source. Offline evaluation can be conducted through metrics such as recall overlap and consistency with the results of the precision ranking model.
+> To evaluate a recommendation retrieval model, we can consider both individual and comparative metrics:
+>
+> **Individual Evaluation**
+>    -   Top-K Accuracy
+>     -   Retrieval Rate
+>     -   F1-Score
+>     -   Hit Rate
+>
+> **Comparative Evaluation**
+> >
+> - **Retrieval Overlap:** Measures the extent to which a new retrieval source complements existing ones.
+>  - **Precision Ranking Consistency:** Assesses how well the retrieval source aligns with the precision ranking model.
 
-#### Please describe the recall, ranking, and re-ranking modules of the recommendation system, including the function of each module and the models used.
+#### How do the retrieval, ranking, and re-ranking modules of a recommendation system work?
 
-See section 12.2.
+> Refer to Section 12.2 for more details.
 
-#### In the context of information flow recommendation, assuming the business goal is to improve user retention, how should one choose appropriate recommendation ranking metrics?
+#### How can we select effective ranking metrics for feeds recommendations to improve user retention?
 
-A common practice is to use user retention as the dependent variable and user interaction metrics such as playback, likes, and comments as independent variables for regression, referencing the weights of the regression model to formulate appropriate recommendation ranking metrics.
+> To optimize for user retention, we can use a regression model with user retention as the target variable and user engagement metrics (e.g., time spent, likes, comments) as features. The resulting model weights can inform relative importance of these engagement metrics. By prioritizing content that drives these engagement metrics, we can increase user retention.
 
 #### How can we enhance the diversity of recommendation results?
 
-Firstly, through post-processing, and secondly, through list-level reordering. Post-processing involves adjusting the ranking results during the fine-tuning stage, such as dispersing duplicate content within adjacent or sliding windows to enhance diversity. List-level reordering can utilize methods based on Determinantal Point Processes (DPP) to optimize list-level diversity.
+> We can enhance recommendation diversity through:
+> 
+> -  **Post-Processing:** Adjusting the ranking results to disperse similar items.
+> -  **List-Level Reordering:** Using techniques like Determinantal Point Processes (DPP) to optimize the overall diversity of the recommendation list.
 
-#### What dimensions are typically included in the user profile of a recommendation system, and how can a user profile platform be constructed?
+#### What are the key components of a user profile, and how can we build a user understanding platform?
 
-Common dimensions of profile features: demographic characteristics, interest tags, user behavior history.
-The construction of the profiling platform includes (1) building a tagging system and using machine learning algorithms to train the interest tag model; (2) Visualization: providing a user-friendly interface to visually display user profile information; (3) API Interface: providing an API interface for other systems to conveniently access user profile data. (4) Application Scenarios: identifying application scenarios within enterprises for personalized recommendations, precision marketing, user segmentation, etc.
+> Key Dimensions of User Profiles:
+>
+> -   **Demographic Information:** Age, gender, location, etc.
+> -   **Interests:** Topics, genres, brands, etc.
+> -   **Behavioral Data:** Browsing history, purchase history, click-through rates, etc.
+> 
+> Building a User Profiling Platform:
+>
+>-  **Tagging System:** Develop a system to categorize and tag user content and behavior.
+>-  **User Classifiers:** Train models to identify user interests and preferences based on their historical data.
+> -  **User Interface:** Create a user-friendly interface to visualize user profiles and insights.
+> - **API Integration:** Develop APIs to expose user profile data to other systems.
+> - **Application Scenarios:** Identify use cases for personalized recommendations, targeted marketing, and user segmentation.
 
-[\[↑\] Back to top](#数据科学方法与实践思考题)
+[\[↑\] Back to top](#DataScienceInterviewQuestions&Exercises)
 
-# Chapter 13 Application Scenarios in the Advertising Field
+# Chapter 13 Computational Advertising
 
-#### What are the differences between brand advertising and performance advertising in terms of purpose, duration, optimization goals, and revenue evaluation?
+#### How do brand advertising and performance advertising differ in terms of goals, duration, optimization strategies, and revenue measurement?
 
-See Table 13-1.
+> Please refer to Table 13-1 for a detailed comparison.
 
-#### Assuming that the advertiser has a budget that cannot be spent and cannot obtain exposure traffic, how should we diagnose this situation?
+#### How can we diagnose the reasons for a lack of ad impressions and budget spending?
 
-Diagnosis includes the following: 
+> To diagnose the issue, consider the following:
+>
+> -   **Targeting:** Ensure the target audience is defined accurately and not overly restrictive.
+> -   **Bidding:** Verify that the bidding strategy is competitive and the bid amount is sufficient.
+> -   **Ad Creative:** Assess the quality and relevance of the ad creative.
+>-   **Account Status:** Check for any account suspensions, restrictions, or daily budget limitations.
 
- - Targeting issues: Check if the targeting is too narrow or affected by
-   filtering rules;         
- - Bid competitiveness issues: Is the bid too
-   low and    lacking competitiveness; 
- - Ad creative appealingness:
-   Is the ad    creative lacking appeal; 
- - Ad account issues: Is the
-   account suspended    or restricted? Has the account set a daily
-   budget limit that has been    reached?
+#### How does social media advertising on platforms like Facebook work, from ad creation to conversion tracking?
 
-#### Please describe the business process of advertising on social media platforms such as Facebook, including the entire process of ad creation, budget and bid setting, ad targeting, ad display, and click conversion.
+> Social Media Advertising Process:
+> 1.  **Ad Creation:**
+    -   Define advertising objectives (e.g., brand awareness, website traffic, lead generation).
+    -   Create ad groups and design ad creatives (e.g., images, videos, text).
+> 2. **Budget and Bidding:**
+    -   Set a daily budget.
+    -   Choose a bidding strategy (e.g., cost-per-click, cost-per-impression, automated bidding).
+> 3. **Ad Targeting:**
+    -   Define the target audience based on demographics, interests, and behaviors.
+> 4. **Ad Delivery:**
+    -   The platform's algorithm displays ads to the target audience.
+> 5. **Ad Conversion:**
+    -   Track user actions after ad clicks (e.g., website visits, purchases, sign-ups).
 
-The following is the business process of advertising on social media platforms (taking Facebook as an example):
-1. Ad Creation: This includes selecting advertising objectives (such as increasing brand awareness, driving website traffic, generating leads, etc.), creating ad groups, designing ad materials, etc.;
-2. Budget and Bid Setting: Set a daily budget, choose a bidding method (cost-per-click, cost-per-impression, automated bidding, etc.), and bidding strategy;
-3. Ad Targeting;
-4. Ad Display;
-5. Ad Conversion: tracking user behavior after clicking on the ad;
+#### What are common techniques for pacing advertising budgets?
 
-#### What are the common budget pacing methods?
-
-Common methods include
- - adjusting bids: enhancing ad spending by modifying bids;
- - Probabilistic throttling: control budget consumption through the probability of
+> Two common budget pacing techniques are:
+> - **Bid adjustments**: enhancing ad spending by modifying bids;
+> - **Probabilistic throttling**: control budget spend by changing the probability of auction
    participation.
 
-#### What problem does the budget isolation experimental mechanism aim to solve? How is a budget isolation A/B test typically created?
+#### How does budget-aware experiments address the challenge of budget allocation in A/B testing?
 
-[\[↑\] Back to top](#数据科学方法与实践思考题)
+> Budget-aware experimentation addresses the challenge of resource allocation in A/B testing. By isolating budgets for different experiments, we can avoid interference and ensure accurate performance evaluation.
+>
+> Here's how to implement a budget-isolated A/B test:
+> 
+> 1.  **Allocate Budget:** Assign a specific budget to each experiment.
+> 2. **Independent Pacing:** Implement independent pacing mechanisms to control spending for each experiment.
+> 3. **Statistical Analysis:** Use statistical techniques to analyze the results, accounting for budget constraints.
 
-## Chapter 14 Application Scenarios in Search
+[\[↑\] Back to top](#DataScienceInterviewQuestions&Exercises)
 
-#### Please describe the process of constructing an inverted index.
+## Chapter 14 Search
 
-See Figure 14-3 for the process of generating an inverted index: tokenization, text processing, and indexing.
+#### How is an inverted index constructed?
 
-#### Please write out the formula for the NDCG metric and provide an example of how NDCG is calculated.
+> Refer to Figure 14-3 for a visual representation of the inverted index construction process: tokenization, text processing, and indexing.
 
-See section 14.3.2 of this book.
+#### How is the Normalized Discounted Cumulative Gain (NDCG) metric calculated, and what does it measure?
 
-#### How do you evaluate the relevance and authority of search results?
+> For a detailed explanation and example calculation of NDCG, please refer to Section 14.3.2.
+> 
+#### How can we assess the relevance and authority of search results?
 
-The relevance of search results can be measured through subjective evaluation and objective evaluation. Subjective evaluation requires the establishment of evaluation standards, labeling results through manual evaluation or large language models, and calculating metrics such as NDCG. Objective evaluation can be conducted through user behavior metrics such as click-through rate, long play rate, and bounce rate. Evaluating the authority of search results generally focuses on website authority, author authority, and author-category authority, where author-category authority indicates the author's authority within the current category.
+> **Relevance:**
+>
+> -   **Subjective Evaluation:** Human experts assess result relevance based on predefined guidelines.
+> -   **User behavior:** Analyze user behavior metrics like click-through rate (CTR), dwell time, and bounce rate.
+>
+> **Authority:**
+>-   **Website Authority:** Evaluate the reputation and trustworthiness of the website.
+>-   **Author Authority:** Assess the expertise and credibility of the author.
+>-   **Author-Category Authority:** Consider the author's specific knowledge and experience in the relevant field.
+>
+#### How can search terms be categorized?
 
-#### What are the common classification methods for search terms?
+> Search terms can be categorized by:
+>
+> -   **Generality:** Broad-intent or precise intent
+> -   **Timeliness:** Timely or non-timely
+> -   **User Intent:** Navigational, informational, or transactional
 
-Classified as general types into broad intent and precise search, by timeliness into timely and non-timely, and by intent into navigational intent, information retrieval, and transactional intent.
+#### Compare and contrast subjective and objective evaluation methods for search.
 
-#### What are the advantages and disadvantages of subjective and objective evaluations of search? Compare subjective and objective evaluations of search in terms of distinguishability, evaluation accuracy, applicability, and evaluation cost.
+> | Area | Subjective Evaluation | User Behavior | 
+> |---|---|---| 
+> | Granularity | Low granularity | High granularity | 
+> | Accuracy | Relies on human judgment | Affected by data noise | 
+> | Applicability | End-to-end and module-level | Primarily end-to-end | 
+> | Cost | High (human labor) | High (development and testing) |
 
-Subjective evaluation usually can only categorize whether or not or into a few simple levels, with low distinguishability. The accuracy of subjective evaluation is affected by the evaluator's grasp of user intent, while the accuracy of objective evaluation is influenced by noise in user behavior data. Subjective evaluation is applicable to end-to-end evaluation of search engines, as well as to the evaluation of individual modules such as the intent understanding module. In terms of evaluation cost, subjective evaluation usually requires hiring people for assessment, while objective evaluation requires development and deployment, as well as a large number of A/B testing iterations.
+[\[↑\] Back to top](#DataScienceInterviewQuestions&Exercises)
 
-[\[↑\] Back to top](#数据科学方法与实践思考题)
+## Chapter 15 Natural Language Processing
 
-## Chapter 15 Natural Language Models and Application Scenarios
+#### How do negative sampling and hierarchical Softmax work in Word2Vec?
 
-#### Please explain the negative sampling and hierarchical SoftMax methods of the Word2Vec model.
+> For a detailed explanation, please refer to Section 15.3.2.
+> 
+#### How can we derive sentence embeddings from word embeddings?
 
-See Section 15.3.2 of this book.
+> Common approaches to obtain sentence embeddings include:
+> -   **Averaging Word Embeddings:** Calculate the average of the word embeddings in the sentence.
+> -   **Weighted Averaging:** Assign weights to words based on their importance.
+> -   **Sentence Embeddings Models:** Utilize specialized models like Sentence Transformers or Sentence-BERT.
+> 
+#### What is a token in Natural Language Processing, and what are common tokenization techniques?
 
-#### How can sentence embeddings be obtained from word embeddings?
+> In Natural Language Processing, a token is the smallest unit of text. It can be a word, a subword (e.g., "un-", "friend"), or a punctuation mark. Common tokenization techniques include:
+>
+> -   **Word-Level Tokenization:** Splits text into words.
+> -   **Subword Tokenization:** Divides words into smaller units (subwords).
+> -   **Character-Level Tokenization:** Breaks text into individual characters.
 
-A simple method is to take the average of the word embeddings in the sentence, or to weight the word vectors; a simple and easy-to-use modification method is the SIF embedding proposed by Arora et al. in 2017.
+#### How do LSTM and transformer models compare in Natural Language Processing?
 
-#### What does token mean in Natural Language Processing, and what are some common tokenizers?
+> Both LSTM and transformer models are powerful tools for processing sequential data. However, transformers excel at capturing long-range dependencies and can be parallelized more efficiently, making them a popular choice for many natural language processing tasks.
 
-In Natural Language Processing, a token can be simply interpreted as the smallest semantic unit in textual data. It can be a word, a subword, or even a punctuation mark. Table 15-3 of the book introduces common tokenization methods.
+#### What are the key drivers and applications of Natural Language Processing (NLP)?
 
-#### What are the similarities and differences between LSTM and transformer models in Natural Language Processing?
+> For a deeper dive into the history and applications of NLP, please refer to Chapters 15.1 and 15.2.
 
-Both LSTM and transformer models can be used to process sequential data; compared to LSTM, transformers can better parallelize and are more adept at handling long-distance dependencies.
-
-#### Please describe the development context of Natural Language Processing and typical scenarios of Natural Language Processing.
-
-See Chapters 15.1 and 15.2 of this book for details.
-
-[\[↑\] Back to top](#数据科学方法与实践思考题)
+[\[↑\] Back to top](#DataScienceInterviewQuestions&Exercises)
 
 ## Chapter 16 Large Language Models
 
-#### What are the three dimensions that characterize the scale of LLMs?
- - Number of model parameters.
- - Number of training tokens
- - Computational resources required for training.
+#### What are the key factors that determine the scale of a Large Language Model (LLM)?
 
-#### How are intrinsic hallucination and extrinsic hallucination defined, and what are some ways to eliminate hallucinations?
+> The scale of an LLM is primarily influenced by three factors:
+>
+> -  **Model Size:** The number of parameters in the model.
+> - **Data Scale:** The amount of training data used.
+> - **Computational Resources:** The computational power required for training.
 
- - **Intrinsic hallucination:** The generated text is logically contradictory to the source content. 
- - **Extrinsic hallucination:** We cannot verify the correctness of the output from the provided source; The source content does not provide enough information to assess the output, making it uncertain.
+#### What are the types of hallucinations in LLMs, and how can we mitigate them?
 
-Methods to reduce hallucinations in large model outputs include decoding strategy optimization and retrieval-augmented generation.
+> There are two main types of hallucinations in LLMs:
+>
+> -  **Intrinsic Hallucinations:** The model generates text that contradicts the provided input.
+>- **Extrinsic Hallucinations:** The model generates text that is factually incorrect or unsupported by the input.
+>
+> To reduce hallucinations, techniques like decoding strategy optimization and retrieval-augmented generation can be employed.
 
-#### Please describe the workflow of Retrieval-Augmented Generation (RAG).
+#### How does Retrieval-Augmented Generation (RAG) work?
 
-Retrieval-Augmented Generation mainly consists of the following steps:
+> The RAG process involves:
+>
+> 1. **Index Construction:** Preprocessing text data, segmenting it into tokens, and creating embeddings for efficient search.
+> 2. **Retrieval:** Retrieving relevant information from a knowledge base using techniques like keyword search, semantic search, or knowledge graph-based retrieval.
+> 3. **Generation:** Using a language model to generate text based on the retrieved information and the prompt.
 
-1. **Index Construction:** The process of index construction includes data preprocessing, text segmentation, and vectorization.
-2. **Retrieval:** Common retrieval methods include keyword retrieval, vector retrieval, knowledge graph-enhanced retrieval, and advanced retrieval methods.
-3. **Generation:** During the generation process, we focus on the base model used for generation and controlling the quality of the generation.
+#### What are the data challenges associated with large language models?
 
-#### What are the data challenges of LLMs?
+> LLMs face significant data challenges, including:
+>
+> -   **Data Quality:** Ensuring data accuracy, consistency, and relevance.
+> -   **Data Quantity:** Acquiring and processing massive amounts of data.
+> -   **Data Privacy:** Protecting sensitive information and complying with data privacy regulations.
+> -   **Data Bias:** Mitigating biases in the training data to avoid unfair or harmful outputs.
 
-The data challenges of large models include the challenges of storage, cleaning, and training brought by massive data, with data cleaning challenges manifested in data redundancy, traversal, and PII leakage, among others.
+#### How is an LLM fine-tuned for a specific task?
 
-#### Please describe the process of fine-tuning a LLM.
-
-The fine-tuning of a large model mainly involves the following steps:
-1. **Data Preparation:** Collect and organize the data we want the model to learn from, and label this data correctly.
-2. **Model Selection:** Choose a suitable large model for the task, such as BERT, GPT, etc.
-3. **Model Training:** Adjust the model's learning rate, batch size, and other parameters to train the model with the prepared data.
-4. **Model Evaluation:** Evaluate the performance of the fine-tuned model.
-5. **Model Saving:** Save the trained model for easy access in subsequent tasks.
+> Fine-tuning an LLM involves the following steps:
+> 1. **Data Preparation:** Collect and curate a dataset specific to the target task.
+> 2. **Model Selection:** Choose a pre-trained LLM as a starting point.
+> 3. **Model Adaptation:** Adjust the model's parameters to fit the specific task.
+> 4. **Training:** Train the model on the task-specific dataset.
+>  5. **Evaluation:** Assess the model's performance on a validation set.
+>   6. **Deployment:** Deploy the fine-tuned model for real-world applications.

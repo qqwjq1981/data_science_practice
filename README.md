@@ -1,6 +1,10 @@
 # Supplementary Materials for ***Data Science Methods and Practice***
 
-This repo contains supplementary materials for the book [Data Science Methods and Practice](https://), published by China Machine Press in 2024/2025. This repo is organized as follows:
+This repo contains supplementary materials for the book *Data Science Methods and Practice*, published by China Machine Press in 2024/2025. 
+
+![Data Science Methods and Practice](https://github.com/qqwjq1981/data_science_practice/blob/main/dataScience.jpg)
+
+This repo is organized as follows:
 - Data Science Interview Questions & Practical Exercises.
 - Case study A: Personalized recommendation based on Linkedin profile.
 - Case study B: Data pipeline for a conceptual convenience store example.
