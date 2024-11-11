@@ -10,8 +10,9 @@ This repo is organized as follows:
 - Case study A: Personalized recommendation based on Linkedin profile.
 - Case study B: Data pipeline for a conceptual convenience store example.
 
-### Data Science Interview Questions & Practical Exercises
+### Data Science Interview Questions & Exercises
 
+[Interview questions & exercises](https://github.com/qqwjq1981/data_science_practice/blob/main/quizzes-en.md)
 
 ### Personalized recommendation based on Linkedin Profile
 The overall project aims to create a system that provides users with personalized content recommendations. It achieves this by collecting relevant articles from various websites based on predefined topics (**RSS Crawling**), using advanced techniques like embeddings and clustering to group similar articles together, (**Embedding and Clustering**) and analyzing a user's LinkedIn profile to understand their interests (**Profile Understanding and Recommendation**).
@@ -43,6 +44,11 @@ This module focuses on understanding a user's interests based on their LinkedIn 
 - 书中思考题的详细答案或提示。
 - 案例研究 A：基于 Linkedin 个人资料的个性化内容推荐。
 - 案例研究 B：便利店示例的数据管道。
+
+### 思考题的详细答案或提示
+
+[思考题的详细答案或提示](https://github.com/qqwjq1981/data_science_practice/blob/main/quizzes-cn.md)
+
 
 ### 基于 Linkedin 个人资料的个性化内容推荐
 整个项目旨在创建一个为用户提供个性化内容推荐的系统。它根据预定义主题从各个网站抓取相关文章（**RSS 抓取**）、使用嵌入和聚类等技术将相似的文章聚合在一起（**内容嵌入和聚类**），分析用户的 LinkedIn 个人资料了解用户画像并进行推荐（**用户理解和推荐**）。
