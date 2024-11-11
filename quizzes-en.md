@@ -1,5 +1,9 @@
 # Data Science Interview Questions & Exercises
 
+ The following questions supplement the book *Data Science Methods and Practices* and are designed as a study guide for interview preparation. Some background information provided in the book is omitted here, so certain questions may lack framing or context. 
+
+Each question is labeled by difficulty and open-endedness: 1-star questions cover straightforward textbook definitions, while 3-star questions are more technical and open-ended.
+
 [Chapter 1 Introduction to Data Science](#Chapter-1-Introduction-to-Data-Science)
 
 [Chapter 2 Statistical Foundations](#Chapter-2-Statistical-Foundations)
@@ -67,7 +71,7 @@
 
 #### (**) Provide 2-3 examples of outstanding data scientists around you, highlighting their exceptional qualities.
 
-#### Considering your professional background and work experience, think about your career plan for the next 3-5 years. If you wish to transition to a data scientist or algorithm engineer, how should you identify and address gaps in your skills?
+#### (**) Considering your professional background and work experience, think about your career plan for the next 3-5 years. If you wish to transition to a data scientist or algorithm engineer, how should you identify and address gaps in your skills?
 
 #### (**) What technical skills and knowledge are essential for transitioning from small-scale data analysis to large-scale data science projects?
 
@@ -81,13 +85,13 @@
 
 #### (*) Simulate repeated coin flips until the first head appears. Determine the probability distribution of the total number of flips required.
 
-> The distribution of the total number of tosses follows a geometric distribution, with probability mass function $P(X=k) = (1/2)^k$.
+> The distribution of the total number of tosses follows a **geometric distribution**, with probability mass function $P(X=k) = (1/2)^k$.
 
 #### (**) Monty Hall problem: The Monty Hall problem is a classic probability puzzle. Suppose there are three doors, behind one of which is a car, and behind the other two are goats. A contestant randomly selects a door. After the contestant’s choice, the host, who knows what’s behind each door, opens another door, revealing a goat. Should the contestant stick with their original choice, or switch to the remaining unopened door?
 
 >  If the contestant initially selects a door randomly, the probability of choosing the car is $1/3$. Therefore, if they stick with their initial choice, the probability of winning remains $1/3$. However, if the contestant initially selects a goat (which has a $2/3$ probability), the host will be forced to reveal the other goat. In this case, switching to the remaining unopened door guarantees a win. Thus, the optimal strategy is to **always switch doors**.。
 
-#### (***) Given an unfair coin with a probability of landing heads up, $p$, how can we simulate a fair coin flip?
+#### (**) Given an unfair coin with a probability of landing heads up, $p$, how can we simulate a fair coin flip?
 
 > A common approach is to flip the coin twice. If the two flips result in the same outcome (both heads or both tails), discard the result and flip again. If the two flips result in different outcomes (one head and one tail), we can use the first flip as the outcome of the fair coin flip. The probability of getting a (Head, Tail) or a (Tail, Head) in this scenario is 1/2.
 
@@ -110,6 +114,19 @@
 
 ## Chapter 3 Machine Learning Essentials
 
+#### (**) What approaches can be used to combat overfitting and underfitting?
+> - **Overfitting**: 
+>     - Ensemble learning (Bagging, Boosting).
+>     - L1 and L2 regularization.
+>     - Regularization techniques in neural networks (dropout and early stopping). 
+>  - **Underfitting**: 
+>      - Feature crossing. 
+>      - More complex models and search for new features.
+
+#### (**) List common distance-based clustering and density-based clustering algorithms.  Please provide up to 5 examples.
+
+> Common distance-based clustering algorithms include K-Means and hierarchical clustering. Density-based clustering algorithms include DBSCAN, HDBSCAN, etc.
+> 
 #### (***) Compare and contrast the strengths and weaknesses of Linear Regression (LR), Random Forest (RF), and Gradient Boosting Decision Trees (GBDT) algorithms. Additionally, discuss the strategies for implementing these algorithms in a distributed computing environment.
 
 > A detailed comparison of the advantages and disadvantages of these algorithms can be found in Table 3-3 of this book. Implementing these algorithms in distributed computing environment:
@@ -131,20 +148,6 @@ Let $F_S​(s)$ and $F_T​(t)$ denote the cumulative distribution functions of 
 > | Missing data | No explicit mechanism for handling missing data | Built-in strategies for handling missing data | 
 > | Parallelization | Supports parallel computing, but relatively inefficient | Supports parallel computing and optimizes efficiency | 
 > | System Optimization | Relatively few optimizations | Optimizations for cache, column sampling etc. |
-
-#### (**) What approaches can be used to combat overfitting and underfitting?
-
-> - **Overfitting**: 
->     - Ensemble learning (Bagging, Boosting).
->     - L1 and L2 regularization.
->     - Regularization techniques in neural networks (dropout and early stopping). 
->  - **Underfitting**: 
->      - Feature crossing. 
->      - More complex models and search for new features.
-
-#### (**) List common distance-based clustering and density-based clustering algorithms.  Please provide up to 5 examples.
-
-> Common distance-based clustering algorithms include K-Means and hierarchical clustering. Density-based clustering algorithms include DBSCAN, HDBSCAN, etc.
 
 [\[↑\] Back to top](#Data-Science-Interview-Questions--Exercises)
 
@@ -181,10 +184,6 @@ Let $F_S​(s)$ and $F_T​(t)$ denote the cumulative distribution functions of 
 
 ## Chapter 5 Data Science Workflow
 
-#### (***) How should one choose between manual and automated feature engineering? In which scenarios is each approach preferable?
-
-> The choice depends primarily on **domain knowledge** and **feature quantity**. Manual feature engineering is generally preferred when domain knowledge is rich, there is a deep understanding of the data, and the number of features is manageable. In contrast, automated feature engineering is more suitable when domain knowledge is limited, the dataset is large, manually designing features is costly, and model interpretability requirements are lower.
-
 #### (**) How can continuous features be bucketed based on data distribution, and what are the pros and cons of distribution-based bucketing?
 
 > A common approach is to bucket based on data quantiles. This method ensures uniform sample sizes across buckets but results in non-integer boundaries and may be affected by distribution drift.
@@ -210,11 +209,15 @@ Let $F_S​(s)$ and $F_T​(t)$ denote the cumulative distribution functions of 
 > - **DBSCAN clustering:** Classifies points as core, border, or noise, with noise points identified as potential outliers.
 > - **LOF (Local Outlier Factor):** Measures outlyingness by comparing the local density of each point to that of its neighbors.
 
+#### (***) How should one choose between manual and automated feature engineering? In which scenarios is each approach preferable?
+
+> The choice depends primarily on **domain knowledge** and **feature quantity**. Manual feature engineering is generally preferred when domain knowledge is rich, there is a deep understanding of the data, and the number of features is manageable. In contrast, automated feature engineering is more suitable when domain knowledge is limited, the dataset is large, manually designing features is costly, and model interpretability requirements are lower.
+
 [\[↑\] Back to top](#Data-Science-Interview-Questions--Exercises)
 
 ## Chapter 6 Data Storage and Computation
 
-#### (***) esign a database system for a convenience store that tracks transaction time, user, itemized products (quantity and price), and allows for product returns.
+#### (**) Design a database system for a convenience store that tracks transaction time, user, itemized products (quantity and price), and allows for product returns.
 
 > Requirements:
 > -   Track transaction time, user ID, and multiple products per order.
