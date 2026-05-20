@@ -72,3 +72,13 @@ RSS抓取模块负责从支持 RSS 的网站抓取内容，步骤如下：
 ### 便利店示例的数据管道
 
 （用于介绍数据模式、实时和离线数据流以及交易分析）
+
+---
+
+## About the author / 关于作者
+
+**Jianqiang (Jay) Wang** — Ph.D. in Statistics, formerly Principal Applied Science Manager at Microsoft, Visiting Professor at Colorado State University, Data Scientist at Twitter, Lead Data Scientist at Snap, and Director of Data Science at Kuaishou.
+
+Jay also runs **[Curify AI](https://www.curify-ai.com)**, an AI-powered visual content platform (video translation, MBTI character cards, bilingual subtitles, video enhancement) where many of the data-science patterns from this book are applied in production. For the related English companion book, see [Building Recommender Systems Using Large Language Models](https://github.com/qqwjq1981/springer-LLM-recommendation-system) (Springer, 2025).
+
+[LinkedIn](https://www.linkedin.com/in/jay-jianqiang-wang-78a6726/) | [MentorCruise](https://mentorcruise.com/mentor/jaywang/) | [Curify AI](https://www.curify-ai.com)
